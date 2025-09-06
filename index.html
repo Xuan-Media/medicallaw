@@ -175,7 +175,7 @@
                 <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
                     <div class="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="./assets/imgs/banner.jpg" alt="Hội nghị Y tế" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                            <img src="./assets/imgs/yte.jpg" alt="Hội nghị Y tế" class="rounded-2xl shadow-xl w-full h-auto object-cover">
                         </div>
                         <div class="space-y-8">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Về Hội Nghị</h2>
@@ -454,25 +454,25 @@
                 <form id="registration-form" class="max-w-xl mx-auto space-y-6 rounded">
                     <div class="relative">
                         <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
-                        <input type="text" placeholder="Họ và Tên (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                        <input type="text" placeholder="Họ và Tên (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
                     </div>
                     <div class="relative">
                         <i class="fas fa-briefcase absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
-                        <input type="text" placeholder="Chức vụ / Đơn vị (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                        <input type="text" placeholder="Chức vụ / Đơn vị (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
                     </div>
                     <div class="grid grid-cols-1 gap-6">
                         <div class="relative">
                             <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
-                            <input type="email" placeholder="Email (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                            <input type="email" placeholder="Email (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
                         </div>
                         <div class="relative">
                             <i class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
-                            <input type="tel" placeholder="Số điện thoại (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                            <input type="tel" placeholder="Số điện thoại (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
                         </div>
                     </div>
                     <div class="relative">
                         <i class="fas fa-user-tag absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
-                        <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-gray-500 focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                        <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
                             <option value="" disabled selected>Loại khách mời (*)</option>
                             <option value="VIP">VIP (Theo thư mời)</option>
                             <option value="DoanhNghiep">Doanh nghiệp</option>
@@ -481,7 +481,7 @@
                     </div>
                     <div class="relative">
                         <i class="fas fa-tasks absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
-                        <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-gray-500 focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                        <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
                             <option value="" disabled selected>Nhu cầu tham dự (*)</option>
                             <option value="Networking">Networking</option>
                             <option value="TaiTro">Tài trợ</option>
@@ -489,8 +489,9 @@
                         </select>
                     </div>
                     <div id="form-message" class="hidden text-center p-3 rounded-md"></div>
-                    <button type="submit" class="shimmer-btn w-full bg-gradient-to-r from-brand-gold to-yellow-500 text-white font-bold py-4 rounded-lg hover:from-brand-gold-dark hover:to-brand-gold transition shadow-lg text-xl transform hover:-translate-y-1">
-                        Xác Nhận Đăng Ký
+                    <button type="submit" id="submit-btn" class="shimmer-btn w-full bg-gradient-to-r from-brand-gold to-yellow-500 text-white font-bold py-4 rounded-lg hover:from-brand-gold-dark hover:to-brand-gold transition shadow-lg text-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <span class="btn-text">Xác Nhận Đăng Ký</span>
+                        <span class="hidden loader border-2 border-white border-t-transparent rounded-full w-6 h-6 animate-spin"></span>
                     </button>
                 </form>
             </section>
@@ -570,11 +571,48 @@
             // --- Form Submission Handler ---
             const form = document.getElementById('registration-form');
             const formMessage = document.getElementById('form-message');
-            form.addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loader = submitBtn.querySelector('.loader');
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                formMessage.textContent = 'Cảm ơn bạn đã đăng ký! Email xác nhận đã được gửi đến bạn.';
-                formMessage.className = 'block text-center p-3 rounded-md bg-green-100 text-green-800';
-                form.reset();
+                // Hiển thị loading
+                submitBtn.disabled = true;
+                btnText.classList.add('opacity-50');
+                loader.classList.remove('hidden');
+                // Lấy giá trị các trường
+                const inputs = form.querySelectorAll('input, select');
+                const [nameInput, positionInput, emailInput, phoneInput, typeSelect, needSelect] = inputs;
+                const data = {
+                    name: nameInput.value.trim(),
+                    position: positionInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    type: typeSelect.options[typeSelect.selectedIndex].text,
+                    need: needSelect.options[needSelect.selectedIndex].text
+                };
+                try {
+                    const res = await fetch('https://api.xuan.media/send_mail', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    if (res.ok) {
+                        formMessage.textContent = 'Cảm ơn bạn đã đăng ký! Email xác nhận đã được gửi đến bạn.';
+                        formMessage.className = 'block text-center p-3 rounded-md bg-green-100 text-green-800';
+                        form.reset();
+                    } else {
+                        formMessage.textContent = 'Đăng ký thất bại. Vui lòng thử lại hoặc liên hệ BTC.';
+                        formMessage.className = 'block text-center p-3 rounded-md bg-red-100 text-red-800';
+                    }
+                } catch (err) {
+                    formMessage.textContent = 'Không thể kết nối máy chủ. Vui lòng thử lại sau.';
+                    formMessage.className = 'block text-center p-3 rounded-md bg-red-100 text-red-800';
+                }
+                // Ẩn loading
+                submitBtn.disabled = false;
+                btnText.classList.remove('opacity-50');
+                loader.classList.add('hidden');
             });
 
             // --- GSAP Animations ---
