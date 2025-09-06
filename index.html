@@ -28,8 +28,18 @@
             -moz-osx-font-smoothing: grayscale;
             background-color: #faf8f1; /* Gentle Cream Background */
             position: relative; /* Establish stacking context */
+            background-image: url('./assets/imgs/BG.jpg');
+            background-repeat: repeat-y;
+            background-size: contain;
+            background-position: top center;
         }
-        
+        .card-vip {
+            background-image: url('./assets/imgs/BG.jpg');
+            background-repeat: repeat-y;
+            background-size: 100% 100%;
+            background-position: center center;
+
+        }
         /* --- Particles JS as full page background --- */
         #particles-js {
             position: fixed;
@@ -45,6 +55,7 @@
             position: relative;
             overflow: hidden;
             background-color: #0a2540; /* Solid Navy background */
+            background-image: none !important;
         }
         .hero-content {
             position: relative;
@@ -95,6 +106,8 @@
             z-index: 100;
             transition: width 0.1s linear;
         }
+        /* Override Tailwind's .bg-white to add opacity */
+        .bg-white { background-color: rgba(255,255,255,0.9) !important; }
     </style>
     <script>
         tailwind.config = {
@@ -139,7 +152,7 @@
         <!-- 1. HERO SECTION -->
         <section class="hero-container text-white">
             <div class="hero-content container mx-auto px-4 py-12 md:py-36 text-center flex flex-col items-center">
-                <h1 class="text-3xl md:text-7xl font-black leading-tight mb-6 tracking-normal uppercase">Hội Nghị Quốc tê M&A Y Tế Việt Nam 2025</h1>
+                <h1 class="text-3xl md:text-7xl font-black leading-tight mb-6 tracking-normal uppercase">Hội Nghị Quốc tế M&A Y Tế Việt Nam 2025</h1>
                 <p class="text-2xl md:text-3xl font-semibold mb-4 text-brand-gold timetable">Lần thứ nhất</p>
                 <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">Minh bạch pháp lý – Giá trị Y khoa</p>
                 <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-6 max-w-xl mx-auto mb-12 text-center">
@@ -168,11 +181,11 @@
                             <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Về Hội Nghị</h2>
                             <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                                 <p> 
-                                    Hội nghị M&A Y tế Việt Nam 2025 (lần thứ nhất) do <strong>Medicallaw</strong> tổ chức, quy tụ hơn 200 lãnh đạo Bộ ngành, tập đoàn y tế, quỹ đầu tư và chuyên gia quốc tế. <br>
+                                    Hội nghị M&A Y tế Việt Nam 2025 (lần thứ nhất) do <strong>Medical Law</strong> tổ chức, quy tụ hơn 200 lãnh đạo Bộ ngành, tập đoàn y tế, quỹ đầu tư và chuyên gia quốc tế. <br>
                                     Sự kiện nhằm minh bạch hóa, chuẩn hóa quy trình M&A trong lĩnh vực y tế, hướng đến mục tiêu IPO và phát triển bền vững.
                                 </p>
                                 <p class="text-gray-600 italic border-l-4 border-brand-teal pl-4">
-                                    The 1st Vietnam Healthcare M&A Conference 2025, hosted by <strong>Medicallaw</strong>, brings together 200+ leaders from ministries, healthcare corporations, investment funds, and international experts. <br>
+                                    The 1st Vietnam Healthcare M&A Conference 2025, hosted by <strong>Medical Law</strong>, brings together 200+ leaders from ministries, healthcare corporations, investment funds, and international experts. <br>
                                     The conference focuses on transparency and professional standards in healthcare M&A, paving the way for IPOs and sustainable growth.
                                 </p>
                             </div>
@@ -239,7 +252,7 @@
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
                             <div class="text-brand-gold text-xl font-bold w-20 text-center">Ký kết</div>
                             <div><h4 class="font-bold text-xl text-brand-navy">Ký kết MOU </h4>
-                                <p class="text-gray-600">- ONEtoONE & Medicallaw </p>
+                                <p class="text-gray-600">- ONEtoONE & Medical Law </p>
                                 <p class="text-gray-600">- ONEtoONE & M&A Solution Việt Nam</p>
                             </div>
                         </div>
@@ -295,34 +308,69 @@
                 </div>
             </section>
 
-            <!-- 6. QUYỀN LỢI KHI THAM DỰ -->
+            <section id="du-an-benh-vien" class="bg-white p-8 md:p-12 rounded-3xl shadow-lg mb-12">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Dự Án & Bệnh Viện Đồng Hành</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Một số dự án, bệnh viện tiêu biểu mà Medical Law đã tư vấn, đồng hành và hỗ trợ pháp lý trong lĩnh vực y tế.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" class="rounded-lg object-cover w-full bg-white">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" class="rounded-lg object-cover w-full">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" class="rounded-lg object-cover w-full">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" class="rounded-lg object-cover w-full">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" class="rounded-lg object-cover w-full">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" class="rounded-lg object-cover w-full">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" class="rounded-lg object-cover w-full">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" class="rounded-lg object-cover w-full">
+                    </div>
+                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
+                        <img src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" class="rounded-lg object-cover w-full">
+                    </div>
+                </div>
+            </section>
+
             <section id="quyen-loi" >
                 <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Quyền Lợi Khi Tham Dự</h2>
                         <p class="text-lg text-gray-600 max-w-3xl mx-auto">Đây không chỉ là một hội nghị. Đây là cơ hội để bạn kết nối, học hỏi và dẫn đầu trong ngành.</p>
                     </div>
-                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         <!-- Benefit Item -->
-                        <div class="bg-brand-cream/60 p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                             <i class="fas fa-chart-line text-4xl text-brand-teal mt-1"></i>
-                            <div><h3 class="text-xl font-bold text-brand-navy mb-2">Cập nhật xu hướng</h3><p class="text-gray-600">Nắm bắt xu hướng M&A y tế mới nhất tại Việt Nam & Quốc tế.</p></div>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Cập nhật xu hướng</h3><p class="text-white">Nắm bắt xu hướng M&A y tế mới nhất tại Việt Nam & Quốc tế.</p></div>
                         </div>
-                        <div class="bg-brand-cream/60 p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                             <i class="fas fa-hands-helping text-4xl text-brand-teal mt-1"></i>
-                            <div><h3 class="text-xl font-bold text-brand-navy mb-2">Kết nối trực tiếp</h3><p class="text-gray-600">Cơ hội kết nối trực tiếp với các nhà đầu tư & quỹ quốc tế.</p></div>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Kết nối trực tiếp</h3><p class="text-white">Cơ hội kết nối trực tiếp với các nhà đầu tư & quỹ quốc tế.</p></div>
                         </div>
-                        <div class="bg-brand-cream/60 p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                             <i class="fas fa-network-wired text-4xl text-brand-teal mt-1"></i>
-                            <div><h3 class="text-xl font-bold text-brand-navy mb-2">Mở rộng mạng lưới</h3><p class="text-gray-600">Tiếp cận mạng lưới 200+ lãnh đạo y tế & tài chính.</p></div>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Mở rộng mạng lưới</h3><p class="text-white">Tiếp cận mạng lưới 200+ lãnh đạo y tế & tài chính.</p></div>
                         </div>
-                        <div class="bg-brand-cream/60 p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                             <i class="fas fa-file-alt text-4xl text-brand-teal mt-1"></i>
-                            <div><h3 class="text-xl font-bold text-brand-navy mb-2">Tài liệu chuyên sâu</h3><p class="text-gray-600">Nhận bộ tài liệu độc quyền về M&A trong lĩnh vực y tế.</p></div>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Tài liệu chuyên sâu</h3><p class="text-white">Nhận bộ tài liệu độc quyền về M&A trong lĩnh vực y tế.</p></div>
                         </div>
-                        <div class="bg-brand-cream/60 p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
                             <i class="fas fa-gem text-4xl text-brand-teal mt-1"></i>
-                            <div><h3 class="text-xl font-bold text-brand-navy mb-2">Trải nghiệm đẳng cấp</h3><p class="text-gray-600">Tham gia sự kiện chuyên nghiệp, chuẩn quốc tế.</p></div>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Trải nghiệm đẳng cấp</h3><p class="text-white">Tham gia sự kiện chuyên nghiệp, chuẩn quốc tế.</p></div>
                         </div>
                     </div>
                 </div>
@@ -337,15 +385,15 @@
                     </div>
                     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
                         <!-- Ticket Card: VIP -->
-                        <div class="bg-white rounded-2xl shadow-lg p-8 text-center flex flex-col border-2 border-gray-200 hover:border-brand-gold hover:shadow-2xl transition duration-300">
-                            <h3 class="text-2xl font-bold text-brand-navy">VÉ VIP</h3>
+                        <div class="bg-white rounded-2xl shadow-lg p-8 text-center flex flex-col border-2 border-gray-200 hover:border-brand-gold hover:shadow-2xl transition duration-300 card-vip">
+                            <h3 class="text-2xl font-bold text-brand-gold">VÉ VIP</h3>
                             <p class="text-brand-teal font-semibold text-lg mb-4">(Invitation Only)</p>
-                            <p class="text-gray-600 mb-6 flex-grow">Dành cho Lãnh đạo Bộ ngành, Chủ tịch/TGĐ các tập đoàn y tế hàng đầu.</p>
-                            <div class="my-8"><span class="text-2xl md:text-4xl font-bold text-brand-navy">Theo Thư Mời</span></div>
+                            <p class="text-white mb-6 flex-grow">Dành cho Lãnh đạo Bộ ngành, Chủ tịch/TGĐ các tập đoàn y tế hàng đầu.</p>
+                            <div class="my-8"><span class="text-2xl md:text-4xl font-bold text-brand-gold">Theo Thư Mời</span></div>
                         </div>
 
                         <!-- Ticket Card: Business -->
-                        <div class="bg-brand-navy text-white rounded-2xl shadow-2xl p-8 text-center flex flex-col border-2 border-brand-gold">
+                        <div class="bg-[#101332] text-white rounded-2xl shadow-2xl p-8 text-center flex flex-col border-2 border-brand-gold">
                             <h3 class="text-2xl font-bold text-white">VÉ DOANH NGHIỆP</h3>
                             <p class="text-brand-gold font-semibold text-lg mb-4">(Early Bird)</p>
                             <p class="text-gray-300 mb-6 flex-grow">Bao gồm toàn bộ tài liệu, tiệc trà, tiệc trưa VIP và bộ quà tặng cao cấp từ ban tổ chức.</p>
@@ -356,6 +404,20 @@
                 </div>
             </section>
 
+
+            <section id="ve-moi" >
+                <!-- <div class=" p-8 md:p-12 rounded-3xl shadow-lg"> -->
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-gold mb-4 tracking-normal">Melia Hà Nội - Bố cục hội trường</h2>
+                    </div>
+                    <div>
+                        <img src="./assets/imgs/melia.webp" class="rounded rounded-3xl shadow-lg shadow-white w-full" alt="">
+                    </div>
+                    <div class="text-center my-16">
+                        <img src="./assets/imgs/sodomelia.png" class="rounded rounded-3xl shadow-lg shadow-brand-gold w-full" alt="">
+                    </div>
+                <!-- </div> -->
+            </section>
             <!-- 8. ĐƠN VỊ TỔ CHỨC & TÀI TRỢ -->
             <section id="tai-tro" >
                 <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
@@ -377,13 +439,19 @@
                 </div>
             </section>
 
+            <!-- 8.5. DỰ ÁN & BỆNH VIỆN ĐỒNG HÀNH -->
+
             <!-- 9. ĐĂNG KÝ -->
-            <section id="dang-ky" class="bg-white rounded-3xl shadow-2xl p-6 md:p-16">
+        </div>
+
+        <div class="pt-20 pb-8 bg-[#101332] text-white mt-24">
+
+            <section id="dang-ky" class="bg-[#fff] rounded-3xl shadow-2xl p-6 md:p-10 card-vip w-3/4 md:w-2/3 mx-auto -mt-32 relative z-20">
                 <div class="max-w-3xl mx-auto text-center">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-tight animate-heading">Đăng Ký Tham Dự</h2>
-                    <p class="text-lg text-gray-600 mb-12">Vì số lượng chỗ ngồi có hạn, vui lòng đăng ký sớm để đảm bảo vị trí của bạn. Điền thông tin vào biểu mẫu bên dưới để hoàn tất đăng ký.</p>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-gold mb-4 tracking-tight animate-heading">Đăng Ký Tham Dự</h2>
+                    <p class="text-lg text-white mb-12">Vì số lượng chỗ ngồi có hạn, vui lòng đăng ký sớm để đảm bảo vị trí của bạn. Điền thông tin vào biểu mẫu bên dưới để hoàn tất đăng ký.</p>
                 </div>
-                <form id="registration-form" class="max-w-xl mx-auto space-y-6">
+                <form id="registration-form" class="max-w-xl mx-auto space-y-6 rounded">
                     <div class="relative">
                         <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
                         <input type="text" placeholder="Họ và Tên (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
@@ -426,24 +494,36 @@
                     </button>
                 </form>
             </section>
+            <div class="container mx-auto px-6 text-center md:pt-20 pt-6">
+                <h5 class="text-4xl font-bold mb-4 tracking-tight text-brand-gold">Hội Nghị Quốc tế M&A Y Tế Việt Nam 2025</h5>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    <div class="mb-3">
+                        <span class="text-gray-400">Đơn vị tổ chức</span> <br>
+                        <span class="text-xl font-bold">Medical Law</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-gray-400">Đối tác quốc tế</span> <br>
+                        <span class="text-xl font-bold">ONEtoONE Corporate Finance</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-gray-400">Đơn vị bảo trợ truyền thông</span> <br>
+                        <span class="text-xl font-bold">Báo sức khỏe và đời sống</span>
+                    </div>
+                </p>
+
+                <div class="flex justify-center space-x-6 text-2xl mb-10">
+                    <a href="#" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-brand-gold transition"><i class="fas fa-globe"></i></a>
+                </div>
+                <div class="border-t border-gray-700 mt-8 pt-8 text-gray-500 text-sm">
+                    <p>&copy; 2025 Medical Law. All Rights Reserved.</p>
+                </div>
+            </div>
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="pt-20 pb-8 bg-brand-navy text-white mt-24">
-        <div class="container mx-auto px-6 text-center">
-            <h5 class="text-3xl font-bold mb-4 tracking-tight">HỘI NGHỊ M&A Y TẾ 2025</h5>
-            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">Đơn vị tổ chức: Medicallaw | Đối tác quốc tế: ONEtoONE Corporate Finance</p>
-            <div class="flex justify-center space-x-6 text-2xl mb-10">
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition"><i class="fas fa-globe"></i></a>
-            </div>
-             <div class="border-t border-gray-700 mt-8 pt-8 text-gray-500 text-sm">
-                <p>&copy; 2025 Medicallaw. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- JAVASCRIPT -->
     <!-- Particles.js Library -->
