@@ -470,6 +470,11 @@
                             <input type="tel" placeholder="Số điện thoại (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
                         </div>
                     </div>
+
+                    <div class="relative">
+                        <i class="fas fa-briefcase absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                        <input type="text" placeholder="Địa chỉ nhận vé mời (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                    </div>
                     <div class="relative">
                         <i class="fas fa-user-tag absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
                         <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
@@ -582,12 +587,13 @@
                 loader.classList.remove('hidden');
                 // Lấy giá trị các trường
                 const inputs = form.querySelectorAll('input, select');
-                const [nameInput, positionInput, emailInput, phoneInput, typeSelect, needSelect] = inputs;
+                const [nameInput, positionInput, emailInput, phoneInput, addressInput, typeSelect, needSelect] = inputs;
                 const data = {
                     name: nameInput.value.trim(),
                     position: positionInput.value.trim(),
                     email: emailInput.value.trim(),
                     phone: phoneInput.value.trim(),
+                    address: addressInput.value.trim(),
                     type: typeSelect.options[typeSelect.selectedIndex].text,
                     need: needSelect.options[needSelect.selectedIndex].text
                 };
