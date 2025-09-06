@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hội nghị Quốc tế M&A Y Tế Việt Nam 2025</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter - A clean, modern font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom CSS & Tailwind Config -->
+    <style>
+        /* Sử dụng font Inter cho toàn bộ trang */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Hiệu ứng nền Hero với gradient và ảnh nền */
+        .hero-bg {
+            background-color: #0a2540; /* Navy Blue */
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: linear-gradient(rgba(10, 37, 64, 0.9), rgba(10, 37, 64, 0.9)), url('https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CSS cho hiệu ứng animation khi cuộn trang */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+        // Cấu hình Tailwind CSS để thêm màu sắc và font chữ tùy chỉnh
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-navy': '#0a2540', 
+                        'brand-gold': '#d4af37', 
+                        'brand-gold-dark': '#b89b2e',
+                        'brand-light': '#f8f9fa' // Màu nền trắng ngà
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-light text-gray-800">
+
+    <!-- HEADER & NAVIGATION -->
+    <header id="header" class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <a href="#" class="text-2xl font-bold text-brand-navy tracking-wider">MEDICALLAW</a>
+            </div>
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#gioi-thieu" class="text-gray-600 hover:text-brand-gold transition">Giới Thiệu</a>
+                <a href="#chuong-trinh" class="text-gray-600 hover:text-brand-gold transition">Chương Trình</a>
+                <a href="#dien-gia" class="text-gray-600 hover:text-brand-gold transition">Diễn Giả</a>
+                <a href="#dang-ky" class="bg-brand-gold text-white font-bold py-2 px-6 rounded-full hover:bg-brand-gold-dark transition shadow-lg">Đăng Ký</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#gioi-thieu" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Giới Thiệu</a>
+            <a href="#chuong-trinh" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Chương Trình</a>
+            <a href="#dien-gia" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Diễn Giả</a>
+            <a href="#dang-ky" class="block mx-4 my-3 bg-brand-gold text-white text-center font-bold py-3 rounded-full">Đăng Ký</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="hero" class="hero-bg text-white">
+            <div class="hero-content container mx-auto px-6 py-24 md:py-32 text-center flex flex-col items-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">HỘI NGHỊ QUỐC TẾ M&A Y TẾ VIỆT NAM 2025</h1>
+                <p class="text-2xl md:text-3xl font-semibold mb-6">Lần thứ nhất</p>
+                <p class="text-xl md:text-2xl text-brand-gold font-medium italic mb-10">Minh bạch pháp lý – Giá trị Y khoa</p>
+                
+                <!-- Countdown Timer -->
+                <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-8 max-w-lg mx-auto mb-10 text-center">
+                    <div><span id="days" class="block text-4xl md:text-5xl font-bold">00</span><span class="text-sm text-gray-300">Ngày</span></div>
+                    <div><span id="hours" class="block text-4xl md:text-5xl font-bold">00</span><span class="text-sm text-gray-300">Giờ</span></div>
+                    <div><span id="minutes" class="block text-4xl md:text-5xl font-bold">00</span><span class="text-sm text-gray-300">Phút</span></div>
+                    <div><span id="seconds" class="block text-4xl md:text-5xl font-bold">00</span><span class="text-sm text-gray-300">Giây</span></div>
+                </div>
+
+                <a href="#dang-ky" class="bg-brand-gold text-white font-bold py-4 px-10 text-lg rounded-full hover:bg-brand-gold-dark transition-transform transform hover:scale-105 shadow-2xl">
+                    <i class="fas fa-ticket-alt mr-2"></i> Đăng ký tham dự ngay
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. THÔNG TIN CHÍNH (Đưa lên trước để nhấn mạnh) -->
+        <section id="thong-tin-chinh" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="scroll-animate text-center p-6 bg-brand-light rounded-xl shadow-sm">
+                        <i class="fas fa-calendar-alt text-4xl text-brand-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Thời gian</h3>
+                        <p class="text-lg text-gray-600">7h30 - 12h, 21/11/2025</p>
+                    </div>
+                    <div class="scroll-animate text-center p-6 bg-brand-light rounded-xl shadow-sm" style="transition-delay: 0.2s;">
+                        <i class="fas fa-map-marker-alt text-4xl text-brand-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Địa điểm</h3>
+                        <p class="text-lg text-gray-600">Khách sạn Melia Hà Nội</p>
+                    </div>
+                    <div class="scroll-animate text-center p-6 bg-brand-light rounded-xl shadow-sm" style="transition-delay: 0.4s;">
+                        <i class="fas fa-users text-4xl text-brand-gold mb-4"></i>
+                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Quy mô</h3>
+                        <p class="text-lg text-gray-600">200+ Khách mời cao cấp</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. GIỚI THIỆU SỰ KIỆN -->
+        <section id="gioi-thieu" class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-16 scroll-animate">
+                     <h2 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Sự Kiện Tiên Phong Cho Ngành Y Tế</h2>
+                     <p class="text-lg text-gray-600 max-w-3xl mx-auto">Nơi các nhà lãnh đạo, chuyên gia và nhà đầu tư gặp gỡ để định hình tương lai M&A và thị trường vốn cho y tế Việt Nam.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div class="scroll-animate">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1780&auto=format&fit=crop" alt="Hội nghị Y tế" class="rounded-xl shadow-2xl w-full h-auto object-cover">
+                    </div>
+                    <div class="scroll-animate" style="transition-delay: 0.2s;">
+                        <div class="bg-white p-8 rounded-xl shadow-lg mb-6">
+                            <h3 class="text-2xl font-bold text-brand-navy mb-3">Tầm nhìn sự kiện</h3>
+                            <p class="text-gray-700 leading-relaxed">Hội nghị do <strong>Medicallaw</strong> tổ chức, quy tụ hơn 200 lãnh đạo cấp cao. Mục tiêu là minh bạch hóa, chuẩn hóa quy trình M&A trong lĩnh vực y tế, hướng đến IPO và phát triển bền vững.</p>
+                        </div>
+                         <div class="bg-brand-navy text-white p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold text-brand-gold mb-3">Global Outlook</h3>
+                            <p class="text-gray-300 leading-relaxed">The conference focuses on transparency and professional standards in healthcare M&A, paving the way for IPOs and sustainable growth for the Vietnam market.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. CHƯƠNG TRÌNH HỘI NGHỊ -->
+        <section id="chuong-trinh" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 scroll-animate">
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Dòng Chảy Sự Kiện</h2>
+                    <p class="text-lg text-gray-600">Lộ trình chi tiết các phiên thảo luận chuyên sâu.</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Agenda Item -->
+                    <div class="scroll-animate flex items-start space-x-6 bg-brand-light p-6 rounded-xl shadow-sm hover:shadow-lg transition">
+                        <div class="bg-brand-gold text-white rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center text-lg font-bold">7:30</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-navy">Khai mạc & Phát biểu chào mừng</h4>
+                            <p class="text-gray-600">Đại diện Lãnh đạo Bộ Y tế.</p>
+                        </div>
+                    </div>
+                    <!-- Agenda Item -->
+                    <div class="scroll-animate flex items-start space-x-6 bg-brand-light p-6 rounded-xl shadow-sm hover:shadow-lg transition" style="transition-delay: 0.1s;">
+                        <div class="bg-brand-navy text-white rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center text-lg font-bold">8:30</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-navy">Phiên 1 & 2: Pháp lý và Quy trình M&A Chuẩn Quốc Tế</h4>
+                            <p class="text-gray-600">Với TS.BS. Đặng Đức Nhu & Mr. Brian Langenberg (ONEtoONE).</p>
+                        </div>
+                    </div>
+                    <!-- Agenda Item -->
+                     <div class="scroll-animate flex items-start space-x-6 bg-brand-light p-6 rounded-xl shadow-sm hover:shadow-lg transition" style="transition-delay: 0.2s;">
+                        <div class="bg-brand-navy text-white rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center text-lg font-bold">9:30</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-navy">Phiên 3 & 4: Thị trường vốn, IPO & Góc nhìn từ quỹ đầu tư</h4>
+                            <p class="text-gray-600">Tổng quan và kỳ vọng từ các chuyên gia tài chính quốc tế.</p>
+                        </div>
+                    </div>
+                    <!-- Agenda Item -->
+                    <div class="scroll-animate flex items-start space-x-6 bg-brand-light p-6 rounded-xl shadow-sm hover:shadow-lg transition" style="transition-delay: 0.3s;">
+                        <div class="bg-brand-navy text-white rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center text-lg font-bold">10:30</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-navy">Tọa đàm Hỏi Đáp & Ký kết MOU</h4>
+                            <p class="text-gray-600">Tương tác trực tiếp và đánh dấu các hợp tác chiến lược.</p>
+                        </div>
+                    </div>
+                     <!-- Agenda Item -->
+                    <div class="scroll-animate flex items-start space-x-6 bg-brand-light p-6 rounded-xl shadow-sm hover:shadow-lg transition" style="transition-delay: 0.4s;">
+                        <div class="bg-brand-gold text-white rounded-full w-16 h-16 flex-shrink-0 flex items-center justify-center text-lg font-bold">11:30</div>
+                        <div>
+                            <h4 class="font-bold text-xl text-brand-navy">Tiệc trưa VIP & Networking</h4>
+                            <p class="text-gray-600">Kết nối và phát động chương trình thiện nguyện ngành y tế.</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="text-center mt-12 scroll-animate">
+                     <a href="#" class="bg-brand-navy text-white font-bold py-3 px-8 rounded-full hover:bg-gray-700 transition">
+                        <i class="fas fa-download mr-2"></i> Tải Agenda Chi Tiết (PDF)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DIỄN GIẢ -->
+        <section id="dien-gia" class="py-20 bg-brand-light">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 scroll-animate">
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Những Tiếng Nói Dẫn Dắt</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <!-- Speaker -->
+                    <div class="scroll-animate group">
+                        <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-4">
+                           <img class="w-full h-full rounded-full object-cover shadow-lg" src="https://placehold.co/200x200/0a2540/FFFFFF?text=D.D.N" alt="PGS.TS.BS Đặng Đức Nhu">
+                           <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300"></div>
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-navy">PGS.TS.BS Đặng Đức Nhu</h4>
+                        <p class="text-gray-600">Founder Medicallaw</p>
+                    </div>
+                     <!-- Speaker -->
+                    <div class="scroll-animate group" style="transition-delay: 0.2s;">
+                        <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-4">
+                           <img class="w-full h-full rounded-full object-cover shadow-lg" src="https://placehold.co/200x200/E8E8E8/333333?text=B.L" alt="Mr. Brian Langenberg">
+                           <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300"></div>
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-navy">Mr. Brian Langenberg</h4>
+                        <p class="text-gray-600">Đại diện ONEtoONE (US)</p>
+                    </div>
+                     <!-- Speaker -->
+                    <div class="scroll-animate group" style="transition-delay: 0.4s;">
+                        <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-4">
+                           <img class="w-full h-full rounded-full object-cover shadow-lg" src="https://placehold.co/200x200/0a2540/FFFFFF?text=BYT" alt="Đại diện Bộ Y Tế">
+                            <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300"></div>
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-navy">Đại diện Bộ Y Tế</h4>
+                        <p class="text-gray-600">Lãnh đạo cấp cao</p>
+                    </div>
+                     <!-- Speaker -->
+                    <div class="scroll-animate group" style="transition-delay: 0.6s;">
+                        <div class="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-4">
+                           <img class="w-full h-full rounded-full object-cover shadow-lg" src="https://placehold.co/200x200/E8E8E8/333333?text=PE" alt="Quỹ đầu tư">
+                            <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300"></div>
+                        </div>
+                        <h4 class="font-bold text-lg text-brand-navy">Nhà đầu tư quốc tế</h4>
+                        <p class="text-gray-600">Đại diện Quỹ Private Equity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. QUYỀN LỢI & VÉ MỜI -->
+        <section id="dang-ky" class="py-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(10, 37, 64, 0.95), rgba(10, 37, 64, 0.95)), url('https://images.unsplash.com/photo-1554734867-bf3c00a49371?q=80&w=1770&auto=format&fit=crop');">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 scroll-animate">
+                    <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Đầu Tư Cho Tương Lai Của Bạn</h2>
+                    <p class="text-lg text-gray-300 max-w-3xl mx-auto">Tham gia hội nghị không chỉ là một trải nghiệm, đó là một khoản đầu tư chiến lược vào kiến thức và mạng lưới quan hệ.</p>
+                </div>
+                <div class="grid lg:grid-cols-5 gap-8 items-start">
+                    <!-- Quyền lợi -->
+                    <div class="lg:col-span-2 bg-white/10 backdrop-blur-sm text-white p-8 rounded-xl scroll-animate">
+                        <h3 class="text-2xl font-bold text-brand-gold mb-6">Quyền Lợi Độc Quyền</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i><span>Cập nhật xu hướng M&A y tế mới nhất.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i><span>Kết nối trực tiếp với nhà đầu tư & quỹ quốc tế.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i><span>Tiếp cận mạng lưới 200+ lãnh đạo đầu ngành.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i><span>Nhận bộ tài liệu chuyên sâu độc quyền.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-brand-gold mt-1 mr-3"></i><span>Trải nghiệm sự kiện đẳng cấp, chuẩn quốc tế.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Form đăng ký -->
+                    <div class="lg:col-span-3 bg-white p-8 rounded-xl shadow-2xl scroll-animate" style="transition-delay: 0.2s;">
+                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Đăng Ký Tham Dự</h3>
+                        <p class="text-gray-600 mb-6">Số lượng có hạn, ưu tiên đăng ký sớm.</p>
+                         <form id="registration-form" class="space-y-4">
+                            <input type="text" placeholder="Họ và tên (*)" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                            <input type="text" placeholder="Chức vụ / Đơn vị công tác (*)" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                            <input type="email" placeholder="Email (*)" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                            <input type="tel" placeholder="Số điện thoại (*)" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                            <div id="form-message" class="hidden text-center p-3 rounded-md"></div>
+                            <button type="submit" class="w-full bg-brand-gold text-white font-bold py-4 rounded-lg hover:bg-brand-gold-dark transition shadow-lg text-lg">
+                                Xác nhận tham dự
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-navy text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <h5 class="text-3xl font-bold mb-4">HỘI NGHỊ QUỐC TẾ M&A Y TẾ VIỆT NAM 2025</h5>
+            <p class="text-gray-400 mb-8">Đơn vị tổ chức: Medicallaw | Đối tác quốc tế: ONEtoONE Corporate Finance</p>
+            <div class="flex justify-center space-x-6 text-2xl mb-8">
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fas fa-globe"></i></a>
+            </div>
+             <div class="border-t border-gray-700 mt-8 pt-6 text-gray-500 text-sm">
+                <p>&copy; 2025 Medicallaw. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.addEventListener('click', () => { // Đóng khi click vào link
+                mobileMenu.classList.add('hidden');
+            });
+
+            // --- Countdown Timer ---
+            const countdownDate = new Date("Nov 21, 2025 07:30:00").getTime();
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                document.getElementById('days').innerText = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+                document.getElementById('hours').innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-2xl font-bold'>Sự kiện đã diễn ra!</div>";
+                }
+            }, 1000);
+
+            // --- Scroll Animations ---
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1 // Kích hoạt khi 10% phần tử hiện ra
+            });
+            scrollElements.forEach(el => observer.observe(el));
+
+            // --- Form Submission Handler ---
+            const form = document.getElementById('registration-form');
+            const formMessage = document.getElementById('form-message');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Tạm thời mô phỏng việc gửi thành công
+                formMessage.textContent = 'Cảm ơn bạn đã đăng ký! Email xác nhận đã được gửi đến bạn.';
+                formMessage.className = 'block text-center p-3 rounded-md bg-green-100 text-green-800';
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
