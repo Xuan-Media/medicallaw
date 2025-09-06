@@ -11,14 +11,14 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="all" onload="this.media='all'">
     
     <!-- GSAP Animation Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
     <!-- Custom CSS & Tailwind Config -->
     <style>
@@ -135,7 +135,7 @@
     <!-- HEADER -->
     <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div><a href="#" class="text-2xl font-black text-brand-navy tracking-wider"><img src="./assets/imgs/LogoMediacal.png" class="h-[60px]" alt=""></a></div>
+            <div><a href="#" class="text-2xl font-black text-brand-navy tracking-wider"><img src="./assets/imgs/LogoMediacal.png" class="h-[60px]" alt="" loading="lazy"></a></div>
             <div class="hidden md:flex space-x-8 items-center font-semibold">
                 <a href="#gioi-thieu" class="text-gray-700 hover:text-brand-gold transition">Giới Thiệu</a>
                 <a href="#dien-gia" class="text-gray-700 hover:text-brand-gold transition">Diễn Giả</a>
@@ -175,7 +175,7 @@
                 <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
                     <div class="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="./assets/imgs/yte.jpg" alt="Hội nghị Y tế" class="rounded-2xl shadow-xl w-full h-auto object-cover">
+                            <img src="./assets/imgs/yte.jpg" alt="Hội nghị Y tế" class="rounded-2xl shadow-xl w-full h-auto object-cover" loading="lazy">
                         </div>
                         <div class="space-y-8">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Về Hội Nghị</h2>
@@ -275,7 +275,7 @@
                         <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop" alt="PGS.TS.BS Đặng Đức Nhu">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop" alt="PGS.TS.BS Đặng Đức Nhu" loading="lazy">
                                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">PGS.TS.BS Đặng Đức Nhu</h4><p class="text-gray-600">Founder Medicallaw</p>
@@ -283,7 +283,7 @@
                          <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop" alt="Mr. Brian Langenberg">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop" alt="Mr. Brian Langenberg" loading="lazy">
                                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Mr. Brian Langenberg</h4><p class="text-gray-600">Đại diện ONEtoONE (US)</p>
@@ -291,7 +291,7 @@
                         <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1580852300654-7eab65a2a229?q=80&w=1965&auto=format&fit=crop" alt="Đại diện Bộ Y Tế">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1580852300654-7eab65a2a229?q=80&w=1965&auto=format&fit=crop" alt="Đại diện Bộ Y Tế" loading="lazy">
                                 <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Đại diện Bộ Y Tế</h4><p class="text-gray-600">Lãnh đạo cấp cao</p>
@@ -299,7 +299,7 @@
                         <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2071&auto=format&fit=crop" alt="Quỹ đầu tư">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2071&auto=format&fit=crop" alt="Quỹ đầu tư" loading="lazy">
                                 <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Nhà đầu tư quốc tế</h4><p class="text-gray-600">Đại diện Quỹ Private Equity</p>
@@ -315,31 +315,31 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" class="rounded-lg object-cover w-full bg-white">
+                        <img src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" class="rounded-lg object-cover w-full bg-white" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" class="rounded-lg object-cover w-full">
+                        <img src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" class="rounded-lg object-cover w-full" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -411,10 +411,10 @@
                         <h2 class="text-4xl md:text-5xl font-extrabold text-brand-gold mb-4 tracking-normal">Melia Hà Nội - Bố cục hội trường</h2>
                     </div>
                     <div>
-                        <img src="./assets/imgs/melia.webp" class="rounded rounded-3xl shadow-lg shadow-white w-full" alt="">
+                        <img src="./assets/imgs/melia.webp" class="rounded rounded-3xl shadow-lg shadow-white w-full" alt="" loading="lazy">
                     </div>
                     <div class="text-center my-16">
-                        <img src="./assets/imgs/sodomelia.png" class="rounded rounded-3xl shadow-lg shadow-brand-gold w-full" alt="">
+                        <img src="./assets/imgs/sodomelia.png" class="rounded rounded-3xl shadow-lg shadow-brand-gold w-full" alt="" loading="lazy">
                     </div>
                 <!-- </div> -->
             </section>
@@ -528,7 +528,7 @@
 
     <!-- JAVASCRIPT -->
     <!-- Particles.js Library -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
