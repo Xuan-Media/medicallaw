@@ -54,8 +54,20 @@
         .hero-container {
             position: relative;
             overflow: hidden;
-            background-color: #1E2760; /* Solid Navy background */
-            background-image: none !important;
+            background-image: url(./assets/imgs/banner-medicalaw.jpg) !important;
+            background-size: 100% 100%;
+            background-position: center center;
+        }
+        .hero-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #1E2760;
+            opacity: 0.7;
+            z-index: 1;
+            pointer-events: none;
+            /* Optional: blur effect */
+            /* backdrop-filter: blur(2px); */
         }
         .hero-content {
             position: relative;
@@ -154,7 +166,7 @@
             <div class="hero-content container mx-auto px-4 py-12 md:py-36 text-center flex flex-col items-center">
                 <h1 class="text-3xl md:text-7xl font-black leading-tight mb-6 tracking-normal uppercase">Hội Nghị Quốc tế M&A Y Tế Việt Nam 2025</h1>
                 <p class="text-2xl md:text-3xl font-semibold mb-4 text-brand-gold timetable">Lần thứ nhất</p>
-                <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">Minh bạch pháp lý – Giá trị Y khoa</p>
+                <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10">Minh bạch pháp lý – Giá trị Y khoa</p>
                 <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-6 max-w-xl mx-auto mb-12 text-center">
                     <div class="w-20 h-20 md:w-28 md:h-28 flex flex-col justify-center items-center bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm"><span id="days" class="block text-2xl md:text-5xl font-bold">00</span><span class="text-sm uppercase tracking-widest">Ngày</span></div>
                     <div class="w-20 h-20 md:w-28 md:h-28 flex flex-col justify-center items-center bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm"><span id="hours" class="block text-2xl md:text-5xl font-bold">00</span><span class="text-sm uppercase tracking-widest">Giờ</span></div>
