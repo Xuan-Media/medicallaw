@@ -3,22 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preload critical images -->
+    <link rel="preload" href="./assets/imgs/banner-medicalaw.jpg" as="image">
+    <link rel="preload" href="./assets/imgs/LogoMediacal.png" as="image">
+    
     <title>Hội nghị Quốc tế M&A Y Tế Việt Nam 2025</title>
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <!-- Tailwind CSS CDN -->
+    <!-- Critical CSS Inline -->
+    <style>
+        /* Critical CSS - Above the fold content */
+        body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#faf8f1;position:relative;background-image:url('./assets/imgs/BG.jpg');background-repeat:repeat-y;background-size:contain;background-position:top center}#particles-js{position:fixed;width:100vw;height:100vh;top:0;left:0;z-index:-1}.hero-container{position:relative;overflow:hidden;background-image:url(./assets/imgs/banner-medicalaw.jpg)!important;background-size:100% 100%;background-position:center center}.hero-container::before{content:'';position:absolute;inset:0;background:#1E2760;opacity:.7;z-index:1;pointer-events:none}.hero-content{position:relative;z-index:2}#progress-bar{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,#0d3b66,#14b8a6);width:0%;z-index:100;transition:width .1s linear}.bg-white{background-color:rgba(255,255,255,.9)!important}.header{background-color:rgba(255,255,255,.8);backdrop-filter:blur(10px)}
+    </style>
+    
+    <!-- Preload important fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    
+    <!-- Load CSS asynchronously -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap&display=swap" rel="stylesheet">
+    <!-- Preload critical JavaScript -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" as="script">
     
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="all" onload="this.media='all'">
-    
-    <!-- GSAP Animation Library -->
+    <!-- Load JavaScript with defer -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 
     <!-- Custom CSS & Tailwind Config -->
     <style>
@@ -187,7 +205,7 @@
                 <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
                     <div class="grid lg:grid-cols-2 gap-12 items-center">
                         <div>
-                            <img src="./assets/imgs/hoinghi.webp" alt="Hội nghị Y tế" class="rounded-2xl shadow-xl w-full h-auto object-cover" loading="lazy">
+                            <img src="./assets/imgs/hoinghi.webp" alt="Hội nghị Y tế" class="rounded-2xl shadow-xl w-full h-auto object-cover lazyload" loading="lazy">
                         </div>
                         <div class="space-y-8">
                             <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Về Hội Nghị</h2>
@@ -287,7 +305,7 @@
                         <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="./assets/imgs/LogoMediacal.png" loading="lazy">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/LogoMediacal.png" loading="lazy">
                                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">PGS.TS.BS Đặng Đức Nhu</h4><p class="text-gray-600">Founder Medical Law</p>
@@ -295,7 +313,7 @@
                          <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="./assets/imgs/LogoMediacal.png" alt="Mr. Brian Langenberg" loading="lazy">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/LogoMediacal.png" alt="Mr. Brian Langenberg" loading="lazy">
                                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Mr. Brian Langenberg</h4><p class="text-gray-600">Đại diện ONEtoONE (US)</p>
@@ -303,7 +321,7 @@
                         <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="./assets/imgs/LogoMediacal.png" alt="Đại diện Bộ Y Tế" loading="lazy">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/LogoMediacal.png" alt="Đại diện Bộ Y Tế" loading="lazy">
                                 <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Đại diện Bộ Y Tế</h4><p class="text-gray-600">Lãnh đạo cấp cao</p>
@@ -311,7 +329,7 @@
                         <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="./assets/imgs/LogoMediacal.png" alt="Quỹ đầu tư" loading="lazy">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/LogoMediacal.png" alt="Quỹ đầu tư" loading="lazy">
                                 <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Nhà đầu tư quốc tế</h4><p class="text-gray-600">Đại diện Quỹ Private Equity</p>
@@ -327,31 +345,31 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" class="rounded-lg object-cover w-full bg-white" loading="lazy">
+                        <img src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" class="rounded-lg object-cover w-full bg-white lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                     <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" class="rounded-lg object-cover w-full" loading="lazy">
+                        <img src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" class="rounded-lg object-cover w-full lazyload" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -423,10 +441,10 @@
                         <h2 class="text-4xl md:text-5xl font-extrabold text-brand-gold mb-4 tracking-normal">Melia Hà Nội - Bố cục hội trường</h2>
                     </div>
                     <div>
-                        <img src="./assets/imgs/melia.webp" class="rounded rounded-3xl shadow-lg shadow-white w-full" alt="" loading="lazy">
+                        <img src="./assets/imgs/melia.webp" class="rounded rounded-3xl shadow-lg shadow-white w-full lazyload" alt="" loading="lazy">
                     </div>
                     <div class="text-center my-16">
-                        <img src="./assets/imgs/sodomelia.png" class="rounded rounded-3xl shadow-lg shadow-brand-gold w-full" alt="" loading="lazy">
+                        <img src="./assets/imgs/sodomelia.png" class="rounded rounded-3xl shadow-lg shadow-brand-gold w-full lazyload" alt="" loading="lazy">
                     </div>
                 <!-- </div> -->
             </section>
@@ -543,6 +561,45 @@
 
     <!-- FOOTER -->
 
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+    
+    <!-- Performance Monitoring -->
+    <script>
+        // Track page load performance
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const perfData = window.performance.timing;
+                const pageLoad = perfData.loadEventEnd - perfData.navigationStart;
+                const domReady = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+                
+                console.log('Page load time: ' + pageLoad + 'ms');
+                console.log('DOM ready time: ' + domReady + 'ms');
+                
+                // Send to analytics if needed
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'page_load_time', {
+                        'event_category': 'performance',
+                        'event_label': 'page_load',
+                        'value': pageLoad
+                    });
+                }
+            }, 0);
+        });
+    </script>
+    
     <!-- JAVASCRIPT -->
     <!-- Particles.js Library -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
