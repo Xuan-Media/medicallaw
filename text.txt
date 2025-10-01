@@ -1,1 +1,1 @@
-bạn hãy reivew lại file index.html và chuẩn hoá giúp tôi. các dòng thừa, code thừa, comment thừa, code lỗi để cho code dễ đọc dễ nhìn hơn xoá những khoảng trống thừa 
+phần slide cho mobile bị lỗi tải ảnh chậm bạn hãy xem giúp tôi 
