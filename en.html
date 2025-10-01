@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="./assets/imgs/banner-medicalaw.jpg" as="image">
+    <link rel="preload" href="./assets/imgs/LogoMediacal.png" as="image">
+    
+    <link rel="preload" href="./assets/imgs/conference1.jpg" as="image">
+    <link rel="preload" href="./assets/imgs/conference2.jpg" as="image">
+    <link rel="preload" href="./assets/imgs/conference3.jpg" as="image">
+    
+    <title>INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 (Held for the first time)</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    <style>
+        /* Critical CSS - Above the fold content */
+        body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#faf8f1;position:relative;background-image:url('./assets/imgs/BG.jpg');background-repeat:repeat-y;background-size:contain;background-position:top center}#particles-js{position:fixed;width:100vw;height:100vh;top:0;left:0;z-index:-1}.hero-container{position:relative;overflow:hidden;background-image:url(./assets/imgs/banner-medicalaw.jpg)!important;background-size:100% 100%;background-position:center center}.hero-container::before{content:'';position:absolute;inset:0;background:#1E2760;opacity:.7;z-index:1;pointer-events:none}.hero-content{position:relative;z-index:2}#progress-bar{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,#0d3b66,#14b8a6);width:0%;z-index:100;transition:width .1s linear}.bg-white{background-color:rgba(255,255,255,.9)!important}.header{background-color:rgba(255,255,255,.8);backdrop-filter:blur(10px)}
+    </style>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" as="script">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #faf8f1; /* Gentle Cream Background */
+            position: relative; /* Establish stacking context */
+            background-image: url('./assets/imgs/BG.jpg');
+            background-repeat: repeat-y;
+            background-size: contain;
+            background-position: top center;
+        }
+        .card-vip {
+            background-image: url('./assets/imgs/BG.jpg');
+            background-repeat: repeat-y;
+            background-size: 100% 100%;
+            background-position: center center;
+
+        }
+        /* --- Particles JS as full page background --- */
+        #particles-js {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Pushes particles behind all content */
+        }
+
+        /* --- Hero Section Styling --- */
+        .hero-container {
+            position: relative;
+            overflow: hidden;
+            background-image: url(./assets/imgs/banner-medicalaw.jpg) !important;
+            background-size: 100% 100%;
+            background-position: center center;
+        }
+        .hero-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #1E2760;
+            opacity: 0.7;
+            z-index: 1;
+            pointer-events: none;
+            /* Optional: blur effect */
+            /* backdrop-filter: blur(2px); */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- General Animation & Effects --- */
+
+        .shimmer-btn {
+            position: relative;
+            overflow: hidden;
+            transform: translateZ(0);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 0; /* ensure base context */
+        }
+        .shimmer-btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -150%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            transform: skewX(-25deg);
+            pointer-events: none;
+            z-index: -1; /* keep the shine behind text */
+        }
+        .shimmer-btn:hover::after {
+            transform: translateX(250%) skewX(-25deg);
+        }
+        
+        /* Custom Dropdown Styling */
+        .custom-select-wrapper {
+            position: relative;
+        }
+        .custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #0d3b66, #14b8a6);
+            width: 0%;
+            z-index: 100;
+            transition: width 0.1s linear;
+        }
+        /* Override Tailwind's .bg-white to add opacity */
+        .bg-white { background-color: rgba(255,255,255,0.9) !important; }
+
+        /* Conference Carousel Styles */
+        .conference-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-slide img.loaded {
+            opacity: 1;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 20px;
+        }
+
+        .carousel-nav.next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 60px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid #0a2540;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: #0a2540;
+            transform: scale(1.2);
+        }
+
+        /* Desktop 3-image carousel */
+        .carousel-desktop {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .carousel-desktop {
+                display: block;
+            }
+            
+            .carousel-mobile {
+                display: none;
+            }
+
+            .carousel-container-desktop {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                height: 400px;
+                position: relative;
+            }
+
+            .carousel-slide-desktop {
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                cursor: pointer;
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                position: absolute;
+                display: none;
+            }
+
+            .carousel-slide-desktop.left,
+            .carousel-slide-desktop.right {
+                width: 25%;
+                opacity: 0.4;
+                transform: scale(0.7);
+                filter: blur(2px);
+                z-index: 1;
+                display: block;
+            }
+
+            .carousel-slide-desktop.left {
+                left: 10%;
+            }
+
+            .carousel-slide-desktop.right {
+                right: 10%;
+            }
+
+            .carousel-slide-desktop.center {
+                width: 40%;
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+                filter: blur(0px);
+                z-index: 5;
+                left: 50%;
+                display: block;
+            }
+
+            .carousel-slide-desktop img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 767px) {
+            .carousel-slide img {
+                height: 250px;
+            }
+            
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-nav.prev {
+                left: 10px;
+            }
+            
+            .carousel-nav.next {
+                right: 10px;
+            }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-navy': '#0a2540', 
+                        'brand-navy-light': '#0d3b66',
+                        'brand-gold': '#d4af37', 
+                        'brand-gold-dark': '#b89b2e',
+                        'brand-cream': '#faf8f1',
+                        'brand-teal': '#14b8a6', 
+                    },
+                    fontFamily: { 'sans': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="text-brand-navy">
+    
+    <div id="particles-js"></div>
+    <div id="progress-bar"></div>
+
+    <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div><a href="#" class="text-2xl font-black text-brand-navy tracking-wider"><img src="./assets/imgs/LogoMediacal.png" class="h-[60px]" alt="Medicallaw Logo" loading="lazy"></a></div>
+            <div class="hidden md:flex space-x-8 items-center font-semibold">
+                <a href="#about" class="text-gray-700 hover:text-brand-gold transition">About</a>
+                <a href="#speakers" class="text-gray-700 hover:text-brand-gold transition">Speakers</a>
+                <a href="#agenda" class="text-gray-700 hover:text-brand-gold transition">Agenda</a>
+                <a href="#tickets" class="text-gray-700 hover:text-brand-gold transition">Tickets</a>
+                <a href="#register" class="relative z-10 shimmer-btn bg-brand-gold text-white font-bold py-2 px-6 rounded-full hover:bg-brand-gold-dark transition shadow-lg">Register</a>
+                <a href="index.html" title="Tiếng Việt" class="flex items-center text-gray-700 hover:text-brand-gold transition">
+                    <img
+                        src="https://flagcdn.com/w40/vn.png"
+                        srcset="https://flagcdn.com/w80/vn.png 2x"
+                        width="40"
+                        alt="Vietnam">
+                </a>
+            </div>
+            <div class="md:hidden"><button id="mobile-menu-button" class="text-brand-navy focus:outline-none"><i class="fas fa-bars text-2xl"></i></button></div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="#speakers" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Speakers</a>
+            <a href="#agenda" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Agenda</a>
+            <a href="#tickets" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Tickets</a>
+            <a href="#register" class="block mx-4 my-3 bg-brand-gold text-white text-center font-bold py-3 rounded-full">Register</a>
+            <a href="index.html" title="Tiếng Việt" class="flex items-center justify-center px-6 py-3 text-gray-700 hover:bg-gray-100">
+                <img
+                    src="https://flagcdn.com/w40/vn.png"
+                    srcset="https://flagcdn.com/w80/vn.png 2x"
+                    width="40"
+                    alt="Vietnam">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-container text-white">
+            <div class="hero-content container mx-auto px-4 py-12 md:py-36 text-center flex flex-col items-center">
+                <h1 class="text-2xl md:text-5xl font-black  mb-6 tracking-normal uppercase !leading-[1.3] md:w-3/4">INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025</h1>
+                <p class="text-2xl md:text-3xl font-semibold mb-4 text-brand-gold timetable">(Held for the first time)</p>
+                <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10">Legal Clarity – Medical Value</p>
+                <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-6 max-w-xl mx-auto mb-12 text-center">
+                    <div class="w-20 h-20 md:w-28 md:h-28 flex flex-col justify-center items-center bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm"><span id="days" class="block text-2xl md:text-5xl font-bold">00</span><span class="text-sm uppercase tracking-widest">Days</span></div>
+                    <div class="w-20 h-20 md:w-28 md:h-28 flex flex-col justify-center items-center bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm"><span id="hours" class="block text-2xl md:text-5xl font-bold">00</span><span class="text-sm uppercase tracking-widest">Hours</span></div>
+                    <div class="w-20 h-20 md:w-28 md:h-28 flex flex-col justify-center items-center bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm"><span id="minutes" class="block text-2xl md:text-5xl font-bold">00</span><span class="text-sm uppercase tracking-widest">Minutes</span></div>
+                    <div class="w-20 h-20 md:w-28 md:h-28 flex flex-col justify-center items-center bg-white/10 rounded-2xl border border-white/20 backdrop-blur-sm"><span id="seconds" class="block text-2xl md:text-5xl font-bold">00</span><span class="text-sm uppercase tracking-widest">Seconds</span></div>
+                </div>
+                <a href="#register" class="relative z-10 shimmer-btn bg-brand-gold text-white font-bold py-4 px-12 text-lg rounded-full hover:bg-brand-gold-dark transition-all duration-300 transform hover:scale-110 shadow-2xl">
+                    <i class="fas fa-ticket-alt mr-2"></i> Register Now
+                </a>
+            </div>
+        </section>
+
+        <div class="container mx-auto px-4 py-12 space-y-24">
+
+            <section id="about" >
+                <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <img src="./assets/imgs/hoinghi.webp" alt="Healthcare Conference" class="rounded-2xl shadow-xl w-full h-auto object-cover lazyload" loading="lazy">
+                        </div>
+                        <div class="space-y-8">
+                            <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">About the Conference</h2>
+                            <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                                <p> 
+                                    The INTERNATIONAL CONFERENCE ON M&A IN THE HEALTHCARE SECTOR 2025, organized by Medicallaw, brings together over 200 leaders from government ministries, healthcare corporations, investment funds, biomedical and gene-testing technology firms, as well as companies in cosmetics, nutrition, dairy, and more, alongside international experts. <br>
+                                    The event aims to enhance legal transparency, standardize M&A processes in the healthcare sector, and pave the way for IPOs and sustainable development.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+            <div id="hoi-nghi-slide" class="mt-16">
+                <div class="text-center my-20">
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto font-bold">Some typical projects and hospitals that Medicallaw has advised, accompanied, and provided legal support for in the healthcare sector</p>
+                </div>
+
+                <div class="carousel-desktop">
+                    <div class="carousel-container-desktop" id="carouselContainerDesktop">
+                        <div class="carousel-slide-desktop" data-index="0">
+                            <img data-src="./assets/imgs/benhvien/hoanmy.png" alt="Hoan My Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="1">
+                            <img data-src="./assets/imgs/benhvien/nhatrang.png" alt="Nha Trang Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="2">
+                            <img data-src="./assets/imgs/benhvien/vinmec.jpg" alt="Vinmec Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="3">
+                            <img data-src="./assets/imgs/benhvien/phuongdong.png" alt="Phuong Dong Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="4">
+                            <img data-src="./assets/imgs/benhvien/qn.png" alt="Quang Nam Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="5">
+                            <img data-src="./assets/imgs/benhvien/thienhanh.png" alt="Thien Hanh Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="6">
+                            <img data-src="./assets/imgs/benhvien/HAGL-01.png" alt="HAGL Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="7">
+                            <img data-src="./assets/imgs/benhvien/TTH-01.png" alt="TTH Hospital" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="8">
+                            <img data-src="./assets/imgs/benhvien/ne.jpg" alt="NE Project" loading="lazy" class="lazyload">
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev" id="prevBtnDesktop">
+                        <i class="fas fa-chevron-left text-brand-navy text-xl"></i>
+                    </button>
+                    <button class="carousel-nav next" id="nextBtnDesktop">
+                        <i class="fas fa-chevron-right text-brand-navy text-xl"></i>
+                    </button>
+                    <div class="carousel-indicators" id="indicatorsDesktop"></div>
+                </div>
+
+                <div class="carousel-mobile">
+                    <div class="conference-carousel">
+                        <div class="carousel-container" id="carouselContainer">
+                            <div class="carousel-slide active">
+                                <img data-src="./assets/imgs/benhvien/hoanmy.png" alt="Hoan My Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/nhatrang.png" alt="Nha Trang Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/vinmec.jpg" alt="Vinmec Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/phuongdong.png" alt="Phuong Dong Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/qn.png" alt="Quang Nam Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/thienhanh.png" alt="Thien Hanh Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/HAGL-01.png" alt="HAGL Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/TTH-01.png" alt="TTH Hospital" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/ne.jpg" alt="NE Project" loading="lazy" class="lazyload">
+                            </div>
+                        </div>
+                        <button class="carousel-nav prev" id="prevBtn">
+                            <i class="fas fa-chevron-left text-brand-navy text-xl"></i>
+                        </button>
+                        <button class="carousel-nav next" id="nextBtn">
+                            <i class="fas fa-chevron-right text-brand-navy text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-indicators" id="indicators"></div>
+                </div>
+            </div>
+                </div>
+            </section>
+
+            <section id="key-info" >
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white text-center p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl text-brand-teal mb-5"><i class="fas fa-calendar-alt"></i></div>
+                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Date</h3>
+                        <p class="text-lg text-gray-600">November 21, 2025</p>
+                    </div>
+                    <a href="https://maps.app.goo.gl/uX8vYQ9Y3Z4f8A6t7" target="_blank">
+                        <div class="bg-white text-center p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300 h-full">
+                            <div class="text-5xl text-brand-teal mb-5"><i class="fas fa-map-marker-alt"></i></div>
+                            <h3 class="text-2xl font-bold text-brand-navy mb-2">Venue</h3>
+                            <p class="text-lg text-gray-600">Thang Long Ballroom, 7th floor, Meliá Hotel, 44B Ly Thuong Kiet Street, Cua Nam Ward, Hanoi City.</p>
+                        </div>
+                    </a>
+                    <div class="bg-white text-center p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                        <div class="text-5xl text-brand-teal mb-5"><i class="fas fa-users"></i></div>
+                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Media Partner</h3>
+                        <p class="text-lg text-gray-600">"Suc Khoe va Doi Song" Newspaper - Ministry of Health</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="agenda" >
+                <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Conference Agenda</h2>
+                        <p class="text-lg text-gray-600">Explore in-depth discussion sessions and networking opportunities.</p>
+                    </div>
+                    <div class="max-w-4xl mx-auto space-y-4">
+                        <div class="text-brand-navy font-bold text-2xl pb-6">
+                            PART I: OPENING & WELCOME SESSION
+                        </div>
+                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">07:30 
+                                <br>-<br> 
+                                08:25</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Registration of guests and welcome performance</h4></div>
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">08:20 <br>-<br> 
+                                08:30</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Opening Remarks</h4><p class="text-gray-600">Delivered by the Leadership of the Ministry of Health</p></div>
+                        </div>
+
+                        <div class="text-brand-navy font-bold text-2xl py-6">
+                            PART II: CONFERENCE ON IPO AND FUNDS
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">08:30 <br>-<br> 
+                                09:00</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Session 1: Legal Landscape of Healthcare M&A in Vietnam</h4><p class="text-gray-600"><strong>Speaker: Assoc. Prof. Dr. Dang Duc Nhu, MD</strong>, with extensive experience at the Department of Medical Services Administration, Ministry of Health</p></div>
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">09:00 <br>-<br> 
+                                09:35</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Session 2: Sharing on the International Standard M&A Process - A Global Perspective.</h4><p class="text-gray-600"><strong>Speaker: Mr. Brian Langenberg (Representative of ONEtoONE Corporate Finance)</strong>. ONEtoONE is an international middle-market M&A advisory firm, with a presence in more than 30 countries and offices in over 70 cities worldwide. The firm has successfully completed more than 2,000 transactions to date.</p></div>
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">09:35 <br>–<br> 
+                                10:15</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-brand-navy">Session 3: Overview of Vietnam's Capital Market: Equities, Bonds, and IPO Opportunities.</h4>
+                                <p class="text-gray-600"><strong>Speakers:</strong> Representatives from asset management funds or securities firms.</p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">10:15 <br>–<br> 
+                                10:50</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-brand-navy">Session 4: Investors' Expectations and Requirements - Perspectives from International Investment Funds.</h4>
+                                <p class="text-gray-600"><strong>Speaker:</strong> Representative from an International Investment Fund</p>
+                            </div>
+                        </div>
+
+                        <div class="text-brand-navy font-bold text-2xl py-6">
+                            PART III: PANEL DISCUSSION
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-navy hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">11:00 <br> – <br> 
+                                11:30</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Panel Discussion & Q&A: Healthcare Sector M&A in Vietnam</h4>
+                            <p class="text-gray-600">Representatives from ONEtoONE, Medicallaw, Securities Firms, International Investment Funds</p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-navy hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">11:30 <br>–<br> 
+                                12:00</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Signing Ceremony of MOUs with Domestic and International Partners</h4></div>
+                        </div>
+
+                        <div class="text-brand-navy font-bold text-2xl py-6">
+                            PART IV: NETWORKING LUNCH & DONATION CEREMONY
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">12:00 <br> – <br> 
+                                13:30</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Lunch and Gathering & Donation to the Fund for Vietnamese Children with Disabilities</h4><p class="text-gray-600">
+                                    Lunch at the 5-star Meliá Hanoi Hotel
+                            </p></div>
+                        </div>
+                    </div>
+                     <div class="text-center mt-12"><a href="./2. Agenda (Updated 30.09 )(tiếng anh) 3 logo thẳng.pdf" target="_blank" class="shimmer-btn bg-brand-navy text-white font-bold px-4 py-4 md:px-10 rounded-full hover:bg-black transition"><i class="fas fa-download mr-2"></i> Download Detailed Agenda (PDF)</a></div>
+                </div>
+            </section>
+
+            <section id="speakers" >
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Keynote Speakers & Guests</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                        <div class="group">
+                            <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl transition-all duration-500 lazyload" src="./assets/imgs/boyte.svg" alt="Representative of the Ministry of Health" loading="lazy">
+                                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
+                            </div>
+                            <h4 class="font-bold text-xl text-brand-navy">Representative of the Ministry of Health</h4><p class="text-gray-600">Senior Leadership</p>
+                        </div>
+                        <div class="group">
+                            <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl  group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/mrnhu.jpg" alt="Assoc. Prof. Dr. Dang Duc Nhu" loading="lazy">
+                               <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
+                            </div>
+                            <h4 class="font-bold text-xl text-brand-navy">Assoc. Prof. Dr. Dang Duc Nhu</h4><p class="text-gray-600">Founder of Medicallaw</p>
+                        </div>
+                         <div class="group">
+                            <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl  group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/mrbrian.jpg" alt="Mr. Brian Langenberg" loading="lazy">
+                               <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
+                            </div>
+                            <h4 class="font-bold text-xl text-brand-navy">Mr. Brian Langenberg</h4><p class="text-gray-600">Representative of ONEtoONE (US)</p>
+                        </div>
+                        <div class="group">
+                            <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl transition-all duration-500 lazyload" src="./assets/imgs/quy.png" alt="International Investor" loading="lazy">
+                                <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
+                            </div>
+                            <h4 class="font-bold text-xl text-brand-navy">International Investor</h4><p class="text-gray-600">Private Equity Fund Representative</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="benefits" >
+                <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Benefits of Attending</h2>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">This is not just a conference, but an opportunity to connect, exchange, and expand cooperation with top leaders and business owners in the Healthcare sector.</p>
+                    </div>
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-chart-line text-4xl text-brand-teal mt-1"></i>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Trend Updates</h3><p class="text-white">Stay updated on the latest healthcare M&A trends in Vietnam & internationally.</p></div>
+                        </div>
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-hands-helping text-4xl text-brand-teal mt-1"></i>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Direct Networking</h3><p class="text-white">Opportunities for direct connection with international investors & funds.</p></div>
+                        </div>
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-network-wired text-4xl text-brand-teal mt-1"></i>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Expand Your Network</h3><p class="text-white">Access a network of 200+ healthcare & financial leaders.</p></div>
+                        </div>
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-file-alt text-4xl text-brand-teal mt-1"></i>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Premium Gift Set</h3><p class="text-white">Receive a premium gift set & opportunities for promotion at an international event.</p></div>
+                        </div>
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                            <i class="fas fa-gem text-4xl text-brand-teal mt-1"></i>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">High-Class Experience</h3><p class="text-white">Participate in a professional, international-standard event.</p></div>
+                        </div>
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                            <i class="fas fa-handshake-angle text-4xl text-brand-teal mt-1"></i>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Community Engagement</h3><p class="text-white">Contribute to and support community projects.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tickets" >
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Ticket Information</h2>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Choose the appropriate ticket class and secure your spot at Vietnam's leading Healthcare M&A event. Limited availability.</p>
+                    </div>
+                    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
+                        <div class="bg-white rounded-2xl shadow-lg p-8 text-center flex flex-col border-2 border-gray-200 hover:border-brand-gold hover:shadow-2xl transition duration-300 card-vip">
+                            <h3 class="text-2xl font-bold text-brand-gold">VIP TICKET</h3>
+                            <p class="text-brand-teal font-semibold text-lg mb-4">(Invitation Only)</p>
+                            <p class="text-white mb-6 flex-grow">For Ministry Leaders, Chairpersons/CEOs of leading healthcare corporations.</p>
+                            <div class="my-8"><span class="text-2xl md:text-4xl font-bold text-brand-gold">By Invitation</span></div>
+                        </div>
+
+                        <div class="bg-[#101332] text-white rounded-2xl shadow-2xl p-8 text-center flex flex-col border-2 border-brand-gold">
+                            <h3 class="text-2xl font-bold text-white">BUSINESS TICKET</h3>
+                            <p class="text-brand-gold font-semibold text-lg mb-4">(Early Bird)</p>
+                            <p class="text-gray-300 mb-6 flex-grow">Includes all materials, tea break, VIP lunch, and a premium gift set from the organizers.</p>
+                            <div class="my-8"><span class="text-2xl md:text-4xl font-bold text-white">2,000,000 VND</span></div>
+                            <a href="#register" class="mt-auto shimmer-btn bg-brand-gold text-white font-bold py-3 px-6 rounded-full hover:bg-brand-gold-dark transition">Select This Ticket</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="venue" >
+                <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-gold mb-4 tracking-normal">Melia Hanoi - Ballroom Layout</h2>
+                    </div>
+                    <div>
+                        <img src="./assets/imgs/melia.webp" class="rounded rounded-3xl shadow-lg shadow-white w-full lazyload" alt="Melia Hotel Hanoi" loading="lazy">
+                    </div>
+                    <div class="text-center my-16">
+                        <img src="./assets/imgs/sodomelia.png" class="rounded rounded-3xl shadow-lg shadow-brand-gold w-full lazyload" alt="Ballroom Layout" loading="lazy">
+                    </div>
+                </section>
+            <section id="sponsors" >
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Partners & Sponsors</h2>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">The event is organized and supported by leading reputable domestic and international organizations.</p>
+                    </div>
+                    <div>
+                         <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center grayscale">
+                            <div class="h-24 bg-brand-cream/70 rounded-lg flex items-center justify-center text-gray-400 font-semibold transition hover:grayscale-0 hover:bg-white hover:shadow-lg hover:scale-105">Logo</div>
+                             <div class="h-24 bg-brand-cream/70 rounded-lg flex items-center justify-center text-gray-400 font-semibold transition hover:grayscale-0 hover:bg-white hover:shadow-lg hover:scale-105">Logo</div>
+                             <div class="h-24 bg-brand-cream/70 rounded-lg flex items-center justify-center text-gray-400 font-semibold transition hover:grayscale-0 hover:bg-white hover:shadow-lg hover:scale-105">Logo</div>
+                             <div class="h-24 bg-brand-cream/70 rounded-lg flex items-center justify-center text-gray-400 font-semibold transition hover:grayscale-0 hover:bg-white hover:shadow-lg hover:scale-105">Logo</div>
+                             <div class="h-24 bg-brand-cream/70 rounded-lg flex items-center justify-center text-gray-400 font-semibold transition hover:grayscale-0 hover:bg-white hover:shadow-lg hover:scale-105">Logo</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="pt-20 pb-8 bg-[#101332] text-white mt-24">
+
+            <section id="register" class="bg-[#fff] rounded-3xl shadow-2xl p-6 md:p-10 card-vip w-3/4 md:w-2/3 mx-auto -mt-32 relative z-20">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-gold mb-4 tracking-tight animate-heading">Register to Attend</h2>
+                    <p class="text-lg text-white mb-12">The organizers will not accept registrations after October 30, 2025.</p>
+                </div>
+                <form id="registration-form" class="max-w-xl mx-auto space-y-6 rounded">
+                    <div class="relative">
+                        <i class="fas fa-user absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                        <input type="text" placeholder="Full Name (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-briefcase absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                        <input type="text" placeholder="Position / Company (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                    </div>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="relative">
+                            <i class="fas fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                            <input type="email" placeholder="Email (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                        </div>
+                        <div class="relative">
+                            <i class="fas fa-phone absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                            <input type="tel" placeholder="Phone Number (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <i class="fas fa-location-dot absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                        <input type="text" placeholder="Address to receive invitation (*)" required class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-question absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                        <input type="text" placeholder="Question for the speakers" class="peer w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-user-tag absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                        <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                            <option value="" disabled selected>Guest Type (*)</option>
+                            <option value="VIP">VIP</option>
+                            <option value="Business">Business</option>
+                            <option value="Press">Press</option>
+                        </select>
+                    </div>
+                    <div class="relative">
+                        <i class="fas fa-tasks absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
+                        <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
+                            <option value="" disabled selected>Purpose of Attending (*)</option>
+                            <option value="Networking">Networking</option>
+                            <option value="Sponsorship">Sponsorship</option>
+                            <option value="AttendConference">Attend Conference</option>
+                        </select>
+                    </div>
+                    <div id="form-message" class="hidden text-center p-3 rounded-md"></div>
+                    <button type="submit" id="submit-btn" class="shimmer-btn w-full bg-gradient-to-r from-brand-gold to-yellow-500 text-white font-bold py-4 rounded-lg hover:from-brand-gold-dark hover:to-brand-gold transition shadow-lg text-xl transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <span class="btn-text">Confirm Registration</span>
+                        <span class="hidden loader border-2 border-white border-t-transparent rounded-full w-6 h-6 animate-spin"></span>
+                    </button>
+                </form>
+            </section>
+            <div class="container mx-auto px-6 text-center md:pt-20 pt-6">
+                <h5 class="text-4xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">INTERNATIONAL CONFERENCE <br> ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025</h5>
+                <h5 class="text-2xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">(Held for the first time)</h5>
+                
+                <div class="mb-12">
+                    <h4 class="text-2xl font-bold mb-6 text-white">Contact Information</h4>
+                    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+                        <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                            <h5 class="text-xl font-bold mb-4 text-brand-gold">Organizer</h5>
+                            <p class="text-white mb-2"><strong>VIETNAM MEDICAL LEGAL CONSULTING CO., LTD (MEDICAL LAW)</strong></p>
+                            <p class="text-gray-300 mb-1"><i class="fas fa-phone mr-2"></i><strong>Hotline:</strong> +84 559.322.322 / +84 914.266.688 (Mrs. Huong)</p>
+                            <p class="text-gray-300 mb-1"><i class="fas fa-envelope mr-2"></i><strong>Email:</strong> medicallaw@medicalgroup.vn</p>
+                            <p class="text-gray-300 mb-1"><i class="fas fa-globe mr-2"></i><strong>Website:</strong> https://medicallaw.vn/</p>
+                            <p class="text-gray-300"><i class="fas fa-map-marker-alt mr-2"></i><strong>Address:</strong> 95 Nguyen Tuan Street, Thanh Xuan Ward, Hanoi, Vietnam</p>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                            <h5 class="text-xl font-bold mb-4 text-brand-gold">Venue</h5>
+                            <p class="text-white mb-2"><strong>MELIÁ HANOI HOTEL</strong></p>
+                            <p class="text-gray-300 mb-1"><i class="fas fa-phone mr-2"></i><strong>Hotline:</strong> 024 3934 3343</p>
+                            <p class="text-gray-300 mb-1"><i class="fas fa-envelope mr-2"></i><strong>Email:</strong> rsvn@meliahanoi.com.vn</p>
+                            <p class="text-gray-300"><i class="fas fa-map-marker-alt mr-2"></i><strong>Address:</strong> 44 Ly Thuong Kiet Street, Cua Nam Ward, Hoan Kiem District, Hanoi, Vietnam</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    <div class="mb-3">
+                        <span class="text-gray-400">Organizer</span> <br>
+                        <span class="text-xl font-bold">Medicallaw</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-gray-400">International Partner</span> <br>
+                        <span class="text-xl font-bold">ONEtoONE Corporate Finance</span>
+                    </div>
+                    <div class="mb-3">
+                        <span class="text-gray-400">Media Partner</span> <br>
+                        <span class="text-xl font-bold">Suc Khoe & Doi Song Newspaper</span>
+                    </div>
+                </p>
+
+                <div class="border-t border-gray-700 mt-8 pt-8 text-gray-500 text-sm">
+                    <p>© 2025 Medicallaw. All Rights Reserved.</p> 
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
+    
+    <script>
+        // Track page load performance
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const perfData = window.performance.timing;
+                const pageLoad = perfData.loadEventEnd - perfData.navigationStart;
+                const domReady = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+                
+                console.log('Page load time: ' + pageLoad + 'ms');
+                console.log('DOM ready time: ' + domReady + 'ms');
+                
+                // Send to analytics if needed
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'page_load_time', {
+                        'event_category': 'performance',
+                        'event_label': 'page_load',
+                        'value': pageLoad
+                    });
+                }
+            }, 0);
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- Progress Bar ---
+            window.addEventListener('scroll', () => {
+                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrolled = (window.scrollY / scrollableHeight) * 100;
+                document.getElementById('progress-bar').style.width = scrolled + '%';
+            });
+
+            // --- Particles.js Initialization ---
+            particlesJS('particles-js', {
+                "particles": { "number": { "value": 50, "density": { "enable": true, "value_area": 800 } }, "color": { "value": ["#0a2540", "#14b8a6"] }, "shape": { "type": "circle" }, "opacity": { "value": 0.6, "random": true }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#0d3b66", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false } },
+                "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } } } },
+                "retina_detect": true
+            });
+
+            // --- Mobile Menu Toggle ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            mobileMenu.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
+
+            // --- Countdown Timer ---
+            const countdownDate = new Date("Nov 21, 2025 07:30:00").getTime();
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                document.getElementById('days').innerText = Math.floor(distance / 864e5).toString().padStart(2, '0');
+                document.getElementById('hours').innerText = Math.floor((distance % 864e5) / 36e5).toString().padStart(2, '0');
+                document.getElementById('minutes').innerText = Math.floor((distance % 36e5) / 6e4).toString().padStart(2, '0');
+                document.getElementById('seconds').innerText = Math.floor((distance % 6e4) / 1000).toString().padStart(2, '0');
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-2xl font-bold text-brand-navy'>The event has already taken place!</div>";
+                }
+            }, 1000);
+
+            // --- Form Submission Handler ---
+            const form = document.getElementById('registration-form');
+            const formMessage = document.getElementById('form-message');
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loader = submitBtn.querySelector('.loader');
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                // Show loading
+                submitBtn.disabled = true;
+                btnText.classList.add('opacity-50');
+                loader.classList.remove('hidden');
+                // Get form values
+                const inputs = form.querySelectorAll('input, select');
+                const [nameInput, positionInput, emailInput, phoneInput, addressInput, questionInput, typeSelect, needSelect] = inputs;
+                const data = {
+                    name: nameInput.value.trim(),
+                    position: positionInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    phone: phoneInput.value.trim(),
+                    address: addressInput.value.trim(),
+                    question: questionInput.value.trim(),
+                    type: typeSelect.options[typeSelect.selectedIndex].text,
+                    need: needSelect.options[needSelect.selectedIndex].text
+                };
+                try {
+                    const res = await fetch('https://api.xuan.media/send_mail', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                    if (res.ok) {
+                        formMessage.textContent = 'Thank you for registering! A confirmation email has been sent to you.';
+                        formMessage.className = 'block text-center p-3 rounded-md bg-green-100 text-green-800';
+                        form.reset();
+                    } else {
+                        formMessage.textContent = 'Registration failed. Please try again or contact the organizers.';
+                        formMessage.className = 'block text-center p-3 rounded-md bg-red-100 text-red-800';
+                    }
+                } catch (err) {
+                    formMessage.textContent = 'Could not connect to the server. Please try again later.';
+                    formMessage.className = 'block text-center p-3 rounded-md bg-red-100 text-red-800';
+                }
+                // Hide loading
+                submitBtn.disabled = false;
+                btnText.classList.remove('opacity-50');
+                loader.classList.add('hidden');
+            });
+
+             // --- Conference Carousel Functions ---
+            
+            // Desktop 3-image carousel
+            class DesktopCarousel {
+                constructor(containerId, images) {
+                    this.container = document.getElementById(containerId);
+                    this.images = images;
+                    this.currentIndex = 0; // Start with first image as center
+                    this.isAnimating = false;
+                    this.init();
+                }
+
+                init() {
+                    this.createIndicators();
+                    this.bindEvents();
+                    this.loadImages();
+                    this.updateCarousel();
+                }
+
+                loadImages() {
+                    const images = this.container.querySelectorAll('img[data-src]');
+                    images.forEach(img => {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const imgElement = entry.target;
+                                    const src = imgElement.getAttribute('data-src');
+                                    if (src) {
+                                        imgElement.src = src;
+                                        imgElement.onload = () => {
+                                            imgElement.classList.add('loaded');
+                                        };
+                                        imgElement.removeAttribute('data-src');
+                                        observer.unobserve(imgElement);
+                                    }
+                                }
+                            });
+                        });
+                        observer.observe(img);
+                    });
+                }
+
+                createIndicators() {
+                    const indicatorsContainer = document.getElementById('indicatorsDesktop');
+                    this.images.forEach((_, index) => {
+                        const indicator = document.createElement('div');
+                        indicator.className = `carousel-indicator ${index === this.currentIndex ? 'active' : ''}`;
+                        indicator.addEventListener('click', () => this.goToSlide(index));
+                        indicatorsContainer.appendChild(indicator);
+                    });
+                }
+
+                bindEvents() {
+                    document.getElementById('prevBtnDesktop').addEventListener('click', () => this.prev());
+                    document.getElementById('nextBtnDesktop').addEventListener('click', () => this.next());
+                    
+                    // Auto-play
+                    setInterval(() => this.next(), 5000);
+                }
+
+                updateCarousel() {
+                    const slides = this.container.querySelectorAll('.carousel-slide-desktop');
+                    const indicators = document.querySelectorAll('#indicatorsDesktop .carousel-indicator');
+
+                    slides.forEach((slide, index) => {
+                        slide.classList.remove('left', 'center', 'right');
+                        
+                        // Calculate position relative to current center
+                        const diff = index - this.currentIndex;
+                        const totalImages = this.images.length;
+                        
+                        // Handle circular navigation
+                        let position;
+                        if (diff === 0) {
+                            position = 'center';
+                        } else if (diff === 1 || (diff === -(totalImages - 1))) {
+                            position = 'right';
+                        } else if (diff === -1 || (diff === totalImages - 1)) {
+                            position = 'left';
+                        } else {
+                            // Hide images that are not in the 3 visible positions
+                            position = 'hidden';
+                        }
+                        
+                        if (position !== 'hidden') {
+                            slide.classList.add(position);
+                            slide.style.display = 'block';
+                        } else {
+                            slide.style.display = 'none';
+                        }
+                    });
+
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === this.currentIndex);
+                    });
+                }
+
+                next() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                prev() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                goToSlide(index) {
+                    if (this.isAnimating || index === this.currentIndex) return;
+                    this.isAnimating = true;
+                    this.currentIndex = index;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+            }
+
+            // Mobile carousel
+            class MobileCarousel {
+                constructor(containerId, images) {
+                    this.container = document.getElementById(containerId);
+                    this.images = images;
+                    this.currentIndex = 0;
+                    this.isAnimating = false;
+                    this.init();
+                }
+
+                init() {
+                    this.createIndicators();
+                    this.bindEvents();
+                    this.loadImages();
+                    this.updateCarousel();
+                }
+
+                loadImages() {
+                    const images = this.container.querySelectorAll('img[data-src]');
+                    images.forEach(img => {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const imgElement = entry.target;
+                                    const src = imgElement.getAttribute('data-src');
+                                    if (src) {
+                                        imgElement.src = src;
+                                        imgElement.onload = () => {
+                                            imgElement.classList.add('loaded');
+                                        };
+                                        imgElement.removeAttribute('data-src');
+                                        observer.unobserve(imgElement);
+                                    }
+                                }
+                            });
+                        });
+                        observer.observe(img);
+                    });
+                }
+
+                createIndicators() {
+                    const indicatorsContainer = document.getElementById('indicators');
+                    this.images.forEach((_, index) => {
+                        const indicator = document.createElement('div');
+                        indicator.className = `carousel-indicator ${index === this.currentIndex ? 'active' : ''}`;
+                        indicator.addEventListener('click', () => this.goToSlide(index));
+                        indicatorsContainer.appendChild(indicator);
+                    });
+                }
+
+                bindEvents() {
+                    document.getElementById('prevBtn').addEventListener('click', () => this.prev());
+                    document.getElementById('nextBtn').addEventListener('click', () => this.next());
+                    
+                    // Touch events for mobile
+                    let startX = 0;
+                    let endX = 0;
+
+                    this.container.addEventListener('touchstart', (e) => {
+                        startX = e.touches[0].clientX;
+                    });
+
+                    this.container.addEventListener('touchend', (e) => {
+                        endX = e.changedTouches[0].clientX;
+                        const diff = startX - endX;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) {
+                                this.next();
+                            } else {
+                                this.prev();
+                            }
+                        }
+                    });
+
+                    // Auto-play
+                    setInterval(() => this.next(), 5000);
+                }
+
+                updateCarousel() {
+                    const slides = this.container.querySelectorAll('.carousel-slide');
+                    const indicators = document.querySelectorAll('#indicators .carousel-indicator');
+
+                    slides.forEach((slide, index) => {
+                        slide.classList.toggle('active', index === this.currentIndex);
+                    });
+
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === this.currentIndex);
+                    });
+                }
+
+                next() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                prev() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                goToSlide(index) {
+                    if (this.isAnimating || index === this.currentIndex) return;
+                    this.isAnimating = true;
+                    this.currentIndex = index;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+            }
+
+            // Initialize carousels
+            const conferenceImages = [
+                './assets/imgs/benhvien/hoanmy.png',
+                './assets/imgs/benhvien/nhatrang.png',
+                './assets/imgs/benhvien/vinmec.jpg',
+                './assets/imgs/benhvien/phuongdong.png',
+                './assets/imgs/benhvien/qn.png',
+                './assets/imgs/benhvien/thienhanh.png',
+                './assets/imgs/benhvien/HAGL-01.png',
+                './assets/imgs/benhvien/TTH-01.png',
+                './assets/imgs/benhvien/ne.jpg'
+            ];
+
+            // Check if desktop view
+            if (window.innerWidth >= 768) {
+                new DesktopCarousel('carouselContainerDesktop', conferenceImages);
+            } else {
+                new MobileCarousel('carouselContainer', conferenceImages);
+            }
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    location.reload(); // Simple solution to reinitialize carousels
+                }, 250);
+            });
+
+            // --- GSAP Animations ---
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate headings on scroll
+            document.querySelectorAll('section h2').forEach(h => {
+                gsap.from(h, {
+                    opacity: 0,
+                    y: 20,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: { trigger: h, start: 'top 85%', once: true }
+                });
+            });
+
+            // 1. Hero Section Animation
+            gsap.set('.hero-content > *', { autoAlpha: 1 });
+            const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            heroTimeline
+                .fromTo('.hero-content > h1', { y: -20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8 })
+                .fromTo('.hero-content p.timetable', { y: 10, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1 }, "-=0.4")
+                .fromTo('.hero-content > p:nth-of-type(2)', { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8 }, "-=0.6")
+                .fromTo('#countdown > div', { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1 }, "-=0.5")
+                .fromTo('.hero-content > a', { scale: 0.95, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6 }, "-=0.4");
+
+            // 2. General Section Fade-in
+            gsap.utils.toArray('section').forEach((section, i) => {
+                if (i > 0) {
+                    gsap.set(section, { autoAlpha: 0, y: 50 });
+                }
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: 'top 85%',
+                    end: 'bottom top',
+                    onEnter: () => gsap.to(section, { autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out' }),
+                    once: true
+                });
+            });
+
+            // 3. Staggered Grid/Card Animations
+            const animatedGrids = [
+                '#key-info > div',
+                '#agenda .space-y-4 > div',
+                '#speakers .grid > div',
+                '#hoi-nghi-slide .carousel-desktop',
+                '#hoi-nghi-slide .carousel-mobile',
+                '#benefits .grid > div',
+                '#tickets .grid > div',
+                '#sponsors .grid > div'
+            ];
+            animatedGrids.forEach(selector => {
+                gsap.set(selector, { autoAlpha: 0, y: 40 });
+                ScrollTrigger.create({
+                    trigger: selector,
+                    start: 'top 90%',
+                    onEnter: () => gsap.to(selector, {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 0.8,
+                        stagger: 0.15,
+                        ease: 'power3.out'
+                    }),
+                    once: true
+                });
+            });
+
+            // 4. Hover effects for cards
+            const hoverCards = document.querySelectorAll('#key-info > div, #benefits .grid > div, #speakers .group, #agenda .space-y-4 > div');
+            hoverCards.forEach(card => {
+                gsap.set(card, { transformOrigin: 'center center' });
+                card.addEventListener('mouseenter', () => gsap.to(card, { scale: 1.03, y: -5, duration: 0.3, ease: 'power2.out' }));
+                card.addEventListener('mouseleave', () => gsap.to(card, { scale: 1, y: 0, duration: 0.3, ease: 'power2.out' }));
+            });
+
+        });
+    </script>
+</body>
+</html>

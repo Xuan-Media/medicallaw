@@ -1,3 +1,1 @@
-phần slide là sử dụng lại ảnh của bệnh viện đồng hành và swiper ở đây là mỗi lần hiển thị 3 ảnh và ảnh ở giữa được làm nổi bật còn ảnh ở 2 bên được làm mờ và nhỏ hơn khi swipe thì sẽ đổi vị trí để ảnh thứ 3 về thứ 2 thứ 2 về 1 và cứ thế lặp lại. hãy sửa lại đúng ý tôi. bạn hãy test lại mỗi lần bạn gửi kết quả cho tôi bao giờ bạn thấy đúng thì thôi
-
-danh sách ảnh trong folder assets/imgs/benhvien
+bạn hãy reivew lại file index.html và chuẩn hoá giúp tôi. các dòng thừa, code thừa, comment thừa, code lỗi để cho code dễ đọc dễ nhìn hơn xoá những khoảng trống thừa 
