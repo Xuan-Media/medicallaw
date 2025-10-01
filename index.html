@@ -7,6 +7,11 @@
     <link rel="preload" href="./assets/imgs/banner-medicalaw.jpg" as="image">
     <link rel="preload" href="./assets/imgs/LogoMediacal.png" as="image">
     
+    <!-- Preload conference images -->
+    <link rel="preload" href="./assets/imgs/conference1.jpg" as="image">
+    <link rel="preload" href="./assets/imgs/conference2.jpg" as="image">
+    <link rel="preload" href="./assets/imgs/conference3.jpg" as="image">
+    
     <title>HỘI NGHỊ QUỐC TẾ VỀ MUA BÁN VÀ SÁP NHẬP (M&A) TRONG NGÀNH Y TẾ NĂM 2025 (Lần thứ 1)</title>
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <!-- Critical CSS Inline -->
@@ -138,6 +143,182 @@
         }
         /* Override Tailwind's .bg-white to add opacity */
         .bg-white { background-color: rgba(255,255,255,0.9) !important; }
+
+        /* Conference Carousel Styles */
+        .conference-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .carousel-slide {
+            flex: 0 0 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-slide img.loaded {
+            opacity: 1;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-nav:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 20px;
+        }
+
+        .carousel-nav.next {
+            right: 20px;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 60px;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid #0a2540;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: #0a2540;
+            transform: scale(1.2);
+        }
+
+        /* Desktop 3-image carousel */
+        .carousel-desktop {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .carousel-desktop {
+                display: block;
+            }
+            
+            .carousel-mobile {
+                display: none;
+            }
+
+            .carousel-container-desktop {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                height: 400px;
+                position: relative;
+            }
+
+            .carousel-slide-desktop {
+                transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                cursor: pointer;
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                position: absolute;
+                display: none;
+            }
+
+            .carousel-slide-desktop.left,
+            .carousel-slide-desktop.right {
+                width: 25%;
+                opacity: 0.4;
+                transform: scale(0.7);
+                filter: blur(2px);
+                z-index: 1;
+                display: block;
+            }
+
+            .carousel-slide-desktop.left {
+                left: 10%;
+            }
+
+            .carousel-slide-desktop.right {
+                right: 10%;
+            }
+
+            .carousel-slide-desktop.center {
+                width: 40%;
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+                filter: blur(0px);
+                z-index: 5;
+                left: 50%;
+                display: block;
+            }
+
+            .carousel-slide-desktop img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 767px) {
+            .carousel-slide img {
+                height: 250px;
+            }
+            
+            .carousel-nav {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .carousel-nav.prev {
+                left: 10px;
+            }
+            
+            .carousel-nav.next {
+                right: 10px;
+            }
+        }
     </style>
     <script>
         tailwind.config = {
@@ -211,17 +392,101 @@
                             <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Về Hội Nghị</h2>
                             <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                                 <p> 
-                                    HỘI NGHỊ QUỐC TẾ VỀ MUA BÁN VÀ SÁP NHẬP (M&A) TRONG NGÀNH Y TẾ NĂM 2025 (Lần thứ 1) do Medicallaw tổ chức, quy tụ hơn 200 lãnh đạo Bộ ngành, tập đoàn y tế, quỹ đầu tư và chuyên gia quốc tế. <br>
-                                    Sự kiện nhằm minh bạch hóa, chuẩn hóa quy trình M&A trong lĩnh vực y tế, hướng đến mục tiêu IPO và phát triển bền vững.
-                                </p>
-                                <p class="text-gray-600 italic border-l-4 border-brand-teal pl-4">
-                                    INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 (Held for the first time), hosted by Medicallaw, brings together 200+ leaders from ministries, healthcare corporations, investment funds, and international experts. <br>
-                                    The conference focuses on transparency and professional standards in healthcare M&A, paving the way for IPOs and sustainable growth.
-
+                                    HỘI NGHỊ QUỐC TẾ VỀ MUA BÁN VÀ SÁP NHẬP (M&A) TRONG NGÀNH Y TẾ NĂM 2025 (Lần thứ 1) do Medicallaw tổ chức, quy tụ hơn 200 lãnh đạo Bộ ngành, tập đoàn y tế, quỹ đầu tư, công nghệ y sinh và xét nghiệm gene, các doanh nghiệp về mỹ phẩm, dinh dưỡng, sữa,… và chuyên gia quốc tế. <br>
+                                    Sự kiện nhằm minh bạch pháp lý, chuẩn hóa quy trình M&A trong lĩnh vực y tế, hướng đến mục tiêu IPO và phát triển bền vững.
                                 </p>
                             </div>
                         </div>
                     </div>
+
+            <section id="hoi-nghi-slide" class="">
+                <div class="text-center my-20">
+                    <!-- <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Dự Án Đồng Hành</h2> -->
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto font-bold">Một số dự án, bệnh viện tiêu biểu mà Medicallaw đã tư vấn, đồng hành và hỗ trợ pháp lý trong lĩnh vực y tế</p>
+                </div>
+
+                <!-- Desktop 3-image carousel -->
+                <div class="carousel-desktop">
+                    <div class="carousel-container-desktop" id="carouselContainerDesktop">
+                        <div class="carousel-slide-desktop" data-index="0">
+                            <img data-src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="1">
+                            <img data-src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="2">
+                            <img data-src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="3">
+                            <img data-src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="4">
+                            <img data-src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="5">
+                            <img data-src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="6">
+                            <img data-src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="7">
+                            <img data-src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" loading="lazy" class="lazyload">
+                        </div>
+                        <div class="carousel-slide-desktop" data-index="8">
+                            <img data-src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" loading="lazy" class="lazyload">
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev" id="prevBtnDesktop">
+                        <i class="fas fa-chevron-left text-brand-navy text-xl"></i>
+                    </button>
+                    <button class="carousel-nav next" id="nextBtnDesktop">
+                        <i class="fas fa-chevron-right text-brand-navy text-xl"></i>
+                    </button>
+                    <div class="carousel-indicators" id="indicatorsDesktop"></div>
+                </div>
+
+                <!-- Mobile carousel -->
+                <div class="carousel-mobile">
+                    <div class="conference-carousel">
+                        <div class="carousel-container" id="carouselContainer">
+                            <div class="carousel-slide active">
+                                <img data-src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" loading="lazy" class="lazyload">
+                            </div>
+                            <div class="carousel-slide">
+                                <img data-src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" loading="lazy" class="lazyload">
+                            </div>
+                        </div>
+                        <button class="carousel-nav prev" id="prevBtn">
+                            <i class="fas fa-chevron-left text-brand-navy text-xl"></i>
+                        </button>
+                        <button class="carousel-nav next" id="nextBtn">
+                            <i class="fas fa-chevron-right text-brand-navy text-xl"></i>
+                        </button>
+                    </div>
+                    <div class="carousel-indicators" id="indicators"></div>
+                </div>
+            </section>
                 </div>
             </section>
 
@@ -233,11 +498,14 @@
                         <h3 class="text-2xl font-bold text-brand-navy mb-2">Thời gian</h3>
                         <p class="text-lg text-gray-600">21/11/2025</p>
                     </div>
-                    <div class="bg-white text-center p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-5xl text-brand-teal mb-5"><i class="fas fa-map-marker-alt"></i></div>
-                        <h3 class="text-2xl font-bold text-brand-navy mb-2">Địa điểm</h3>
-                        <p class="text-lg text-gray-600">Khách sạn Meliá, số 44B Lý Thường Kiệt, phường Cửa Nam, Hà Nội</p>
-                    </div>
+                    <a href="https://maps.app.goo.gl/RJwBypPH4YDyPn1RA" target="_blank">
+                        <div class="bg-white text-center p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
+                            <div class="text-5xl text-brand-teal mb-5"><i class="fas fa-map-marker-alt"></i></div>
+                            <h3 class="text-2xl font-bold text-brand-navy mb-2">Địa điểm</h3>
+                            <p class="text-lg text-gray-600">Hội trường Thăng Long Ballroom, Tầng 7, Khách sạn Meliá, 44B Lý
+                                Thường Kiệt, Phường Cửa Nam, Thành phố Hà Nội.</p>
+                        </div>
+                    </a>
                     <div class="bg-white text-center p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
                         <div class="text-5xl text-brand-teal mb-5"><i class="fas fa-users"></i></div>
                         <h3 class="text-2xl font-bold text-brand-navy mb-2">Đơn vị bảo trợ truyền thông</h3>
@@ -255,53 +523,98 @@
                         <p class="text-lg text-gray-600">Khám phá các phiên thảo luận chuyên sâu và cơ hội kết nối.</p>
                     </div>
                     <div class="max-w-4xl mx-auto space-y-4">
+                        <div class="text-brand-navy font-bold text-2xl pb-6">
+                            PHẦN I: TIẾP ĐÓN ĐẠI BIỂU & KHAI MẠC HỘI NGHỊ
+                        </div>
                          <!-- Agenda Item -->
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-navy text-xl font-bold w-20 text-center">Đón khách mời</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy"> Dự kiến khoảng 200 đại biểu khách mời
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">07:30 
+                                <br>- <br>
+                                08:25</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy"> Tiếp đón đại biểu khách mời và văn nghệ chào mừng</h4></div>
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">08:25 <br>- <br>
+                                08:30</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Phát biểu khai mạc Hội nghị</h4><p class="text-gray-600">Lãnh đạo Bộ Y tế</p></div>
+                        </div>
 
-                            </h4></div>
-                        </div>
-                        <!-- <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-gold text-xl font-bold w-20 text-center">Khai Mạc</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy">Khai mạc & Phát biểu chào mừng</h4><p class="text-gray-600">Lãnh đạo Bộ Y tế phát biểu.</p></div>
-                        </div> -->
-                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-navy text-xl font-bold w-20 text-center">Phiên 1</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy">Bức tranh tổng thể về các vấn đề pháp lý của M&A trong ngành y tế tại Việt Nam.</h4><p class="text-gray-600"><strong>Diễn giả:</strong> PGS.TS.BS. Đặng Đức Nhu</p></div>
+                        <div class="text-brand-navy font-bold text-2xl py-6">
+                            PHẦN II: HỘI NGHỊ VỀ IPO VÀ CÁC QUỸ                        
                         </div>
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-gold text-xl font-bold w-20 text-center">Phiên 2</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy"> Chia sẻ về Quy trình M&A chuẩn quốc tế - Góc nhìn toàn cầu</h4><p class="text-gray-600"><strong>Diễn giả:</strong> Mr. Brian Langenberg (Đại diện ONEtoONE)
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">08:30 <br>- <br>
+                                09:00</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Phiên 1: Bức tranh tổng thể về các vấn đề pháp lý của M&A trong ngành y tế tại Việt Nam</h4><p class="text-gray-600"><strong>Diễn giả: PGS.TS.BS. Đặng Đức Nhu</strong> đã có nhiều năm kinh nghiệm
+                                làm việc tại Cục Quản lý Khám,
+                                chữa bệnh - Bộ Y Tế
                             </p></div>
                         </div>
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-navy text-xl font-bold w-20 text-center">Phiên 3</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy">Tổng quan về thị trường vốn tại Việt Nam: cổ phiếu và trái phiếu, cùng với những lợi ích của IPO.</h4><p class="text-gray-600"><strong>Diễn giả:</strong>  Đại diện đến từ Quỹ quản lý tài sản và công ty chứng khoán.
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">09:00 <br>- <br>
+                                09:35</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Phiên 2: Chia sẻ về Quy trình M&A
+                                Chuẩn quốc tế - Góc nhìn toàn cầu</h4><p class="text-gray-600"><strong>Diễn giả: Mr. Brian Langenberg (Đại diện ONEtoONE)</strong>.
+                                    ONEtoONE là đơn vị tư vấn đang
+                                    hoạt động tại hơn 30 quốc gia, có
+                                    văn phòng tại hơn 70 thành phố với hơn 2.000 thương vụ đã được triển
+                                    khai thành công
                             </p></div>
                         </div>
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-gold text-xl font-bold w-20 text-center">Phiên 4</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy"> Nhà đầu tư – Những kỳ vọng và yêu cầu – Góc nhìn từ Quỹ đầu tư quốc tế
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">09:35 <br>– <br>
+                                10:15</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-brand-navy"> Phiên 3: Tổng quan về thị trường vốn tại Việt Nam: cổ phiếu và trái phiếu, cùng với
+                                những lợi ích của IPO.
+                                </h4>
+                                <p class="text-gray-600"><strong>Diễn giả:</strong>  Đại diện đến từ Quỹ
+                                quản lý tài sản và công ty chứng
+                                khoán.</p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">10:15 <br>– <br>
+                                11:00</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-brand-navy"> Phiên 4: Nhà đầu tư – Những kỳ vọng và
+                                    yêu cầu – Góc nhìn từ Quỹ đầu tư quốc tế
+                                </h4>
+                                <p class="text-gray-600"><strong>Diễn giả:</strong>  Đại diện đến từ Quỹ đầu tư nước ngoài</p>
+                            </div>
+                        </div>
+
+                        <div class="text-brand-navy font-bold text-2xl py-6">
+                            PHẦN III: TỌA ĐÀM VÀ KÝ KẾT                        </div>
+                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-navy hover:shadow-xl transition duration-300 flex items-center space-x-6">
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">11:00 <br> – <br>
+                                11:30</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Tọa đàm chia sẻ về M&A y tế tại Việt
+                                
                             </h4>
-                            <p class="text-gray-600"><strong>Diễn giả:</strong> Đại diện đến từ Quỹ đầu tư nước ngoài</p>
-                        </div>
-                        </div>
-                        <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-navy hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-navy text-xl font-bold w-20 text-center">Tọa đàm</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy">Tọa đàm chia sẻ về M&A y tế tại Việt Nam
-
-                            </h4></div>
+                            <p class="text-gray-600">Đại diện OnetoOne, Medicallaw,
+                                Công ty chứng khoán, Quỹ đầu tư
+                                quốc tế và Doanh nghiệp y tế.</p>
+                            </div>
                         </div>
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-navy hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-gold text-xl font-bold w-20 text-center">Ký MOU</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy">Ký kết MOU với các đối tác trong nước và quốc tế 
-
+                            <div class="text-brand-navy text-xl font-bold w-20 text-center">11:30 <br>– <br>
+                                12:00</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Ký kết MOU với các đối tác trong nước
+                                và quốc tế
                             </h4></div>
                         </div>
+
+                        <div class="text-brand-navy font-bold text-2xl py-6">
+                            PHẦN IV: TIỆC TRƯA KẾT NỐI & TRAO QUÀ CHO QUỸ VÌ TRẺ EM
+KHUYẾT TẬT VIỆT NAM                      </div>
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-gold hover:shadow-xl transition duration-300 flex items-center space-x-6">
-                            <div class="text-brand-navy text-xl font-bold w-20 text-center">Tiệc trưa</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy">Tiệc trưa kết nối</h4><p class="text-gray-600">Phát động chương trình trách nhiệm cộng đồng, trao quà cho quỹ an sinh y tế (ủng hộ Quỹ Trẻ em khuyết tật Việt Nam,…)
+                            <div class="text-brand-gold text-xl font-bold w-20 text-center">12:00 <br> – <br>
+                                13:30</div>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Tiệc trưa kết nối và phát động chương trình
+                                trách nhiệm cộng đồng, trao quà cho Quỹ
+                                Trẻ em khuyết tật Việt Nam</h4><p class="text-gray-600">
+                                    Tiệc trưa tại khách sạn 5 sao Meliá
                             </p></div>
                         </div>
                     </div>
@@ -320,7 +633,7 @@
                          
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/LogoMediacal.png" alt="Đại diện Bộ Y Tế" loading="lazy">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl transition-all duration-500 lazyload" src="./assets/imgs/boyte.svg" alt="Đại diện Bộ Y Tế" loading="lazy">
                                 <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Đại diện Bộ Y Tế</h4><p class="text-gray-600">Lãnh đạo cấp cao</p>
@@ -344,7 +657,7 @@
                         <!-- Speaker Card -->
                         <div class="group">
                             <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto mb-5">
-                               <img class="w-full h-full object-cover rounded-full shadow-xl grayscale group-hover:grayscale-0 transition-all duration-500 lazyload" src="./assets/imgs/LogoMediacal.png" alt="Quỹ đầu tư" loading="lazy">
+                               <img class="w-full h-full object-cover rounded-full shadow-xl transition-all duration-500 lazyload" src="./assets/imgs/quy.png" alt="Quỹ đầu tư" loading="lazy">
                                 <div class="absolute inset-0 rounded-full border-4 border-transparent group-hover:border-brand-gold transition-all duration-300 scale-90 group-hover:scale-100"></div>
                             </div>
                             <h4 class="font-bold text-xl text-brand-navy">Nhà đầu tư quốc tế</h4><p class="text-gray-600">Đại diện Quỹ Private Equity</p>
@@ -353,47 +666,12 @@
                 </div>
             </section>
 
-            <section id="du-an-benh-vien" class="bg-white p-8 md:p-12 rounded-3xl shadow-lg mb-12">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Dự Án & Bệnh Viện Đồng Hành</h2>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">Một số dự án, bệnh viện tiêu biểu mà Medicallaw đã tư vấn, đồng hành và hỗ trợ pháp lý trong lĩnh vực y tế.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/hoanmy.png" alt="Bệnh viện Hoàn Mỹ" class="rounded-lg object-cover w-full bg-white lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/nhatrang.png" alt="Bệnh viện Nha Trang" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/vinmec.jpg" alt="Bệnh viện Vinmec" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/phuongdong.png" alt="Bệnh viện Phương Đông" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/qn.png" alt="Bệnh viện Quảng Nam" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/thienhanh.png" alt="Bệnh viện Thiện Hạnh" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition p-4 flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/HAGL-01.png" alt="Bệnh viện HAGL" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/TTH-01.png" alt="Bệnh viện TTH" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                    <div class="bg-brand-cream/60 rounded-xl shadow hover:shadow-xl transition flex flex-col items-center">
-                        <img src="./assets/imgs/benhvien/ne.jpg" alt="Dự án NE" class="rounded-lg object-cover w-full lazyload" loading="lazy">
-                    </div>
-                </div>
-            </section>
 
             <section id="quyen-loi" >
                 <div class="bg-white p-6 md:p-12 rounded-3xl shadow-lg">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Quyền Lợi Khi Tham Dự</h2>
-                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Đây không chỉ là một hội nghị. Đây là cơ hội để bạn kết nối, học hỏi và dẫn đầu trong ngành.</p>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Đây không chỉ là một hội nghị mà còn là cơ hội kết nối, giao lưu mở rộng hợp tác với các lãnh đạo, chủ doanh nghiệp hàng đầu trong lĩnh vực Y tế</p>
                     </div>
                      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         <!-- Benefit Item -->
@@ -411,11 +689,15 @@
                         </div>
                         <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
                             <i class="fas fa-file-alt text-4xl text-brand-teal mt-1"></i>
-                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Tài liệu chuyên sâu</h3><p class="text-white">Nhận bộ tài liệu độc quyền về M&A trong lĩnh vực y tế.</p></div>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Quà tặng cao cấp</h3><p class="text-white">Nhận bộ quà tặng cao cấp & cơ hội quảng bá tại sự kiện quốc tế</p></div>
                         </div>
                         <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
                             <i class="fas fa-gem text-4xl text-brand-teal mt-1"></i>
                             <div><h3 class="text-xl font-bold text-brand-teal mb-2">Trải nghiệm đẳng cấp</h3><p class="text-white">Tham gia sự kiện chuyên nghiệp, chuẩn quốc tế.</p></div>
+                        </div>
+                        <div class="bg-[#101332] p-8 rounded-2xl flex items-start space-x-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                            <i class="fas fa-gem text-4xl text-brand-teal mt-1"></i>
+                            <div><h3 class="text-xl font-bold text-brand-teal mb-2">Sự đồng hành</h3><p class="text-white">Đồng hành cùng các dự án cộng đồng</p></div>
                         </div>
                     </div>
                 </div>
@@ -441,7 +723,7 @@
                         <div class="bg-[#101332] text-white rounded-2xl shadow-2xl p-8 text-center flex flex-col border-2 border-brand-gold">
                             <h3 class="text-2xl font-bold text-white">VÉ DOANH NGHIỆP</h3>
                             <p class="text-brand-gold font-semibold text-lg mb-4">(Early Bird)</p>
-                            <p class="text-gray-300 mb-6 flex-grow">Bao gồm toàn bộ tài liệu, tiệc trà, tiệc trưa VIP và bộ quà tặng cao cấp từ ban tổ chức.</p>
+                            <p class="text-gray-300 mb-6 flex-grow">Bao gồm toàn bộ tài liệu, tiệc trà, tiệc trưa VIP và bộ quà tặng cao cấp từ Ban tổ chức.</p>
                             <div class="my-8"><span class="text-2xl md:text-4xl font-bold text-white">2.000.000 VNĐ</span></div>
                             <a href="#dang-ky" class="mt-auto shimmer-btn bg-brand-gold text-white font-bold py-3 px-6 rounded-full hover:bg-brand-gold-dark transition">Chọn vé này</a>
                         </div>
@@ -468,10 +750,9 @@
                 <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg">
                     <div class="text-center mb-16">
                         <h2 class="text-4xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">Đơn Vị Đồng Hành</h2>
-                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Sự kiện được tổ chức và tài trợ bởi các đơn vị uy tín hàng đầu trong và ngoài nước.</p>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto">Sự kiện được tổ chức và đồng hành bởi các đơn vị uy tín hàng đầu trong và ngoài nước.</p>
                     </div>
                     <div>
-                         <h3 class="text-2xl font-bold text-center text-brand-navy mb-8">Nhà Tài Trợ</h3>
                          <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center grayscale">
                             <!-- Sponsor Placeholder -->
                             <div class="h-24 bg-brand-cream/70 rounded-lg flex items-center justify-center text-gray-400 font-semibold transition hover:grayscale-0 hover:bg-white hover:shadow-lg hover:scale-105">Logo</div>
@@ -494,7 +775,7 @@
             <section id="dang-ky" class="bg-[#fff] rounded-3xl shadow-2xl p-6 md:p-10 card-vip w-3/4 md:w-2/3 mx-auto -mt-32 relative z-20">
                 <div class="max-w-3xl mx-auto text-center">
                     <h2 class="text-4xl md:text-5xl font-extrabold text-brand-gold mb-4 tracking-tight animate-heading">Đăng Ký Tham Dự</h2>
-                    <p class="text-lg text-white mb-12">Vì số lượng chỗ ngồi có hạn, vui lòng đăng ký sớm để đảm bảo vị trí của bạn. Điền thông tin vào biểu mẫu bên dưới để hoàn tất đăng ký.</p>
+                    <p class="text-lg text-white mb-12">Ban tổ chức sẽ không nhận đăng ký sau ngày 30/10/2025.</p>
                 </div>
                 <form id="registration-form" class="max-w-xl mx-auto space-y-6 rounded">
                     <div class="relative">
@@ -527,8 +808,8 @@
                     <div class="relative">
                         <i class="fas fa-user-tag absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 peer-focus:text-brand-gold transition-colors"></i>
                         <select required class="peer custom-select w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg text-lg text-black focus:text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-gold transition">
-                            <option value="" disabled selected>Loại khách mời (*)</option>
-                            <option value="VIP">VIP (Theo thư mời)</option>
+                            <option value="" disabled selected>Thành phần khách mời (*)</option>
+                            <option value="VIP">VIP</option>
                             <option value="DoanhNghiep">Doanh nghiệp</option>
                             <option value="BaoChi">Báo chí</option>
                         </select>
@@ -550,7 +831,9 @@
                 </form>
             </section>
             <div class="container mx-auto px-6 text-center md:pt-20 pt-6">
-                <h5 class="text-4xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">HỘI NGHỊ QUỐC TẾ VỀ MUA BÁN VÀ SÁP NHẬP (M&A) TRONG NGÀNH Y TẾ NĂM 2025 (Lần thứ 1)</h5>
+                <h5 class="text-4xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">HỘI NGHỊ QUỐC TẾ <br>
+                    VỀ MUA BÁN VÀ SÁP NHẬP (M&A) TRONG NGÀNH Y TẾ NĂM 2025</h5>
+                <h5 class="text-2xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">Lần thứ 1</h5>
                 
                 <!-- Thông tin liên hệ mới -->
                 <div class="mb-12">
@@ -558,7 +841,8 @@
                     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
                         <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
                             <h5 class="text-xl font-bold mb-4 text-brand-gold">Đơn vị tổ chức</h5>
-                            <p class="text-white mb-2"><strong>CÔNG TY TNHH TƯ VẤN PHÁP LÝ Y TẾ VIỆT NAM (MEDICAL LAW)</strong></p>
+                            <p class="text-white mb-2"><strong>CÔNG TY TNHH TƯ VẤN PHÁP LÝ Y TẾ VIỆT NAM
+                                (MEDICAL LAW)</strong></p>
                             <p class="text-gray-300 mb-1"><i class="fas fa-phone mr-2"></i><strong>Hotline:</strong> 0559.322.322/0914.266.688 (Mrs. Hương)/0911.883.899 (Mr. Cương)
 
                             </p>
@@ -736,6 +1020,273 @@
                 loader.classList.add('hidden');
             });
 
+            // --- Conference Carousel Functions ---
+            
+            // Desktop 3-image carousel
+            class DesktopCarousel {
+                constructor(containerId, images) {
+                    this.container = document.getElementById(containerId);
+                    this.images = images;
+                    this.currentIndex = 0; // Start with first image as center
+                    this.isAnimating = false;
+                    this.init();
+                }
+
+                init() {
+                    this.createIndicators();
+                    this.bindEvents();
+                    this.loadImages();
+                    this.updateCarousel();
+                }
+
+                loadImages() {
+                    const images = this.container.querySelectorAll('img[data-src]');
+                    images.forEach(img => {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const imgElement = entry.target;
+                                    const src = imgElement.getAttribute('data-src');
+                                    if (src) {
+                                        imgElement.src = src;
+                                        imgElement.onload = () => {
+                                            imgElement.classList.add('loaded');
+                                        };
+                                        imgElement.removeAttribute('data-src');
+                                        observer.unobserve(imgElement);
+                                    }
+                                }
+                            });
+                        });
+                        observer.observe(img);
+                    });
+                }
+
+                createIndicators() {
+                    const indicatorsContainer = document.getElementById('indicatorsDesktop');
+                    this.images.forEach((_, index) => {
+                        const indicator = document.createElement('div');
+                        indicator.className = `carousel-indicator ${index === this.currentIndex ? 'active' : ''}`;
+                        indicator.addEventListener('click', () => this.goToSlide(index));
+                        indicatorsContainer.appendChild(indicator);
+                    });
+                }
+
+                bindEvents() {
+                    document.getElementById('prevBtnDesktop').addEventListener('click', () => this.prev());
+                    document.getElementById('nextBtnDesktop').addEventListener('click', () => this.next());
+                    
+                    // Auto-play
+                    setInterval(() => this.next(), 5000);
+                }
+
+                updateCarousel() {
+                    const slides = this.container.querySelectorAll('.carousel-slide-desktop');
+                    const indicators = document.querySelectorAll('#indicatorsDesktop .carousel-indicator');
+
+                    slides.forEach((slide, index) => {
+                        slide.classList.remove('left', 'center', 'right');
+                        
+                        // Calculate position relative to current center
+                        const diff = index - this.currentIndex;
+                        const totalImages = this.images.length;
+                        
+                        // Handle circular navigation
+                        let position;
+                        if (diff === 0) {
+                            position = 'center';
+                        } else if (diff === 1 || (diff === -(totalImages - 1))) {
+                            position = 'right';
+                        } else if (diff === -1 || (diff === totalImages - 1)) {
+                            position = 'left';
+                        } else {
+                            // Hide images that are not in the 3 visible positions
+                            position = 'hidden';
+                        }
+                        
+                        if (position !== 'hidden') {
+                            slide.classList.add(position);
+                            slide.style.display = 'block';
+                        } else {
+                            slide.style.display = 'none';
+                        }
+                    });
+
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === this.currentIndex);
+                    });
+                }
+
+                next() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                prev() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                goToSlide(index) {
+                    if (this.isAnimating || index === this.currentIndex) return;
+                    this.isAnimating = true;
+                    this.currentIndex = index;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+            }
+
+            // Mobile carousel
+            class MobileCarousel {
+                constructor(containerId, images) {
+                    this.container = document.getElementById(containerId);
+                    this.images = images;
+                    this.currentIndex = 0;
+                    this.isAnimating = false;
+                    this.init();
+                }
+
+                init() {
+                    this.createIndicators();
+                    this.bindEvents();
+                    this.loadImages();
+                    this.updateCarousel();
+                }
+
+                loadImages() {
+                    const images = this.container.querySelectorAll('img[data-src]');
+                    images.forEach(img => {
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    const imgElement = entry.target;
+                                    const src = imgElement.getAttribute('data-src');
+                                    if (src) {
+                                        imgElement.src = src;
+                                        imgElement.onload = () => {
+                                            imgElement.classList.add('loaded');
+                                        };
+                                        imgElement.removeAttribute('data-src');
+                                        observer.unobserve(imgElement);
+                                    }
+                                }
+                            });
+                        });
+                        observer.observe(img);
+                    });
+                }
+
+                createIndicators() {
+                    const indicatorsContainer = document.getElementById('indicators');
+                    this.images.forEach((_, index) => {
+                        const indicator = document.createElement('div');
+                        indicator.className = `carousel-indicator ${index === this.currentIndex ? 'active' : ''}`;
+                        indicator.addEventListener('click', () => this.goToSlide(index));
+                        indicatorsContainer.appendChild(indicator);
+                    });
+                }
+
+                bindEvents() {
+                    document.getElementById('prevBtn').addEventListener('click', () => this.prev());
+                    document.getElementById('nextBtn').addEventListener('click', () => this.next());
+                    
+                    // Touch events for mobile
+                    let startX = 0;
+                    let endX = 0;
+
+                    this.container.addEventListener('touchstart', (e) => {
+                        startX = e.touches[0].clientX;
+                    });
+
+                    this.container.addEventListener('touchend', (e) => {
+                        endX = e.changedTouches[0].clientX;
+                        const diff = startX - endX;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) {
+                                this.next();
+                            } else {
+                                this.prev();
+                            }
+                        }
+                    });
+
+                    // Auto-play
+                    setInterval(() => this.next(), 5000);
+                }
+
+                updateCarousel() {
+                    const slides = this.container.querySelectorAll('.carousel-slide');
+                    const indicators = document.querySelectorAll('#indicators .carousel-indicator');
+
+                    slides.forEach((slide, index) => {
+                        slide.classList.toggle('active', index === this.currentIndex);
+                    });
+
+                    indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle('active', index === this.currentIndex);
+                    });
+                }
+
+                next() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                prev() {
+                    if (this.isAnimating) return;
+                    this.isAnimating = true;
+                    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+
+                goToSlide(index) {
+                    if (this.isAnimating || index === this.currentIndex) return;
+                    this.isAnimating = true;
+                    this.currentIndex = index;
+                    this.updateCarousel();
+                    setTimeout(() => this.isAnimating = false, 500);
+                }
+            }
+
+            // Initialize carousels
+            const conferenceImages = [
+                './assets/imgs/benhvien/hoanmy.png',
+                './assets/imgs/benhvien/nhatrang.png',
+                './assets/imgs/benhvien/vinmec.jpg',
+                './assets/imgs/benhvien/phuongdong.png',
+                './assets/imgs/benhvien/qn.png',
+                './assets/imgs/benhvien/thienhanh.png',
+                './assets/imgs/benhvien/HAGL-01.png',
+                './assets/imgs/benhvien/TTH-01.png',
+                './assets/imgs/benhvien/ne.jpg'
+            ];
+
+            // Check if desktop view
+            if (window.innerWidth >= 768) {
+                new DesktopCarousel('carouselContainerDesktop', conferenceImages);
+            } else {
+                new MobileCarousel('carouselContainer', conferenceImages);
+            }
+
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    location.reload(); // Simple solution to reinitialize carousels
+                }, 250);
+            });
+
             // --- GSAP Animations ---
             gsap.registerPlugin(ScrollTrigger);
 
@@ -782,6 +1333,8 @@
                 '#thong-tin-chinh > div',
                 '#chuong-trinh .space-y-4 > div',
                 '#dien-gia .grid > div',
+                '#hoi-nghi-slide .carousel-desktop',
+                '#hoi-nghi-slide .carousel-mobile',
                 '#quyen-loi .grid > div',
                 '#ve-moi .grid > div',
                 '#tai-tro .grid > div'

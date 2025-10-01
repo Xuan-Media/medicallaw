@@ -1,11 +1,3 @@
-hãy sửa giúp tôi phần footer cập nhật các thông tin liên hệ sau thêm 1 section mới cho phù hợp: 
-Thông tin liên hệ
-Đơn vị tổ chức: CÔNG TY TNHH TƯ VẤN PHÁP LÝ Y TẾ VIỆT NAM (MEDICAL LAW):
-Hotline: 0559.322.322/0914.266.688 (Mrs. Hương)
-Email: vnmedicallaw@gmail.com
-Website: https://medicallaw.vn/
-Địa chỉ: Số 95 Nguyễn Tuân, phường Thanh Xuân, thành phố Hà Nội
-Địa điểm tổ chức MELIÁ HOTEL:
-Hotline: 024 3934 3343
-Email: rsvn@meliahanoi.com.vn
-Địa chỉ: số 44 Lý Thường Kiệt, phường Cửa Nam, Hà Nội
+phần slide là sử dụng lại ảnh của bệnh viện đồng hành và swiper ở đây là mỗi lần hiển thị 3 ảnh và ảnh ở giữa được làm nổi bật còn ảnh ở 2 bên được làm mờ và nhỏ hơn khi swipe thì sẽ đổi vị trí để ảnh thứ 3 về thứ 2 thứ 2 về 1 và cứ thế lặp lại. hãy sửa lại đúng ý tôi. bạn hãy test lại mỗi lần bạn gửi kết quả cho tôi bao giờ bạn thấy đúng thì thôi
+
+danh sách ảnh trong folder assets/imgs/benhvien
