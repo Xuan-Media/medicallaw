@@ -1,1 +1,25 @@
-phần slide cho mobile bị lỗi tải ảnh chậm bạn hãy xem giúp tôi 
+Feedback
+
+1: Phiên bản website:
+Banner web: Phần logo cho hiển thị rõ hơn
+Tên hội nghị trên banner: bỏ dấu gạch ngang cuối cùng
+Chữ “Y tế” đồng nhất cách viết hoa
+Dự án tiêu biểu: Tên viết in hoa hết (Kiểm tra ngữ pháp của “Đại học y dược hoàng anh gia lai”)
+Phần Agenda: mục tải Agenda (cập nhật bản mới nhất)
+Diễn giả & khách mời: Thêm 1 tab nữa
+Quyền lợi khi tham dự: Bỏ hết dấu chấm câu
+Mục đăng ký: 
++ Trên trang chủ, thêm tab: “Bạn biết thông tin này từ đâu”: Đưa ra các lựa chọn để người xem chọn như: Facebook,...
++ Tab “Địa chỉ nhận vé mời” đổi tên thành “Địa chỉ nhận vé mời và quà tặng”
++ Thay tab “Nhu cầu tham dự” bằng tab “Lĩnh vực đang hoạt động”: Đưa ra các sự lựa chọn
++Thông tin chuyển khoản chưa có bản tiếng Anh
+Mục vé: https://zalo.me/0559322322
+Vé VIP chuyển thành “Thư mời”; “Vé doanh nghiệp” chuyển thành “Đăng ký thành viên”
+Thay đổi câu: “Lưu ý rằng phí tham dự sẽ tăng dần khi gần đến ngày tổ chức” thành “Trước ngày 10/11 phí đăng ký là 3.000.000; trước ngày 15/11 phí đăng ký là 4.000.000”
+Ballroom layout: đổi thành ảnh layout mới nhất
+
+Thông tin địa điểm tổ chức: Sửa lại phần địa chỉ theo Agenda mới
+Thêm pop-up thông tin liên hệ ở phía góc phải dưới trang web (Hiện ra 3 lựa chọn liên hệ: Hotline  (0559.322.322); Zalo; Facebook
+
+2: bản Mobile
+Thanh menu: Lỗi phần hiển thị thay đổi ngôn ngữ

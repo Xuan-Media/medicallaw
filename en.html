@@ -18,453 +18,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/tailwind-config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-navy': '#0a2540',
-                        'brand-navy-light': '#0d3b66',
-                        'brand-gold': '#d4af37',
-                        'brand-gold-dark': '#b89b2e',
-                        'brand-cream': '#faf8f1',
-                        'brand-teal': '#14b8a6',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: #faf8f1;
-            position: relative;
-            background-image: url('./assets/imgs/BG.jpg');
-            background-repeat: repeat-y;
-            background-size: contain;
-            background-position: top center;
-        }
-        #particles-js {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        .hero-container {
-            position: relative;
-            overflow: hidden;
-            background-image: url(./assets/imgs/banner-medicalaw.jpg) !important;
-            background-size: 100% 100%;
-            background-position: center center;
-        }
-        .hero-container::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: #1E2760;
-            opacity: .7;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        #progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #0d3b66, #14b8a6);
-            width: 0%;
-            z-index: 100;
-            transition: width .1s linear;
-        }
-        .header {
-            background-color: rgba(255, 255, 255, .8);
-            backdrop-filter: blur(10px);
-        }
-        .bg-white {
-            background-color: rgba(255, 255, 255, .9) !important;
-        }
-        .card-vip {
-            background-image: url('./assets/imgs/BG.jpg');
-            background-repeat: repeat-y;
-            background-size: 100% 100%;
-            background-position: center center;
-        }
-        .shimmer-btn {
-            position: relative;
-            overflow: hidden;
-            transform: translateZ(0);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 0;
-        }
-        .shimmer-btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -150%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-            transform: skewX(-25deg);
-            pointer-events: none;
-            z-index: -1;
-        }
-        .shimmer-btn:hover::after {
-            transform: translateX(250%) skewX(-25deg);
-        }
-        .custom-select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-        }
-
-        /* Integrated Slideshow Styles */
-        .integrated-slideshow {
-            position: relative;
-            overflow: visible;
-            border-radius: 1.5rem;
-            padding: 0 20px;
-        }
-
-        .slideshow-container {
-            position: relative;
-            width: 100%;
-            height: 600px; /* Fixed height for consistent layout */
-            overflow: hidden;
-        }
-
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-            animation: fadeIn 0.8s ease-in-out;
-        }
-
-        .slide.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .slide .grid {
-            height: 100%;
-            align-items: center;
-        }
-
-        .slide img {
-            width: 100%;
-            height: auto;
-            /* max-height: 500px; */
-            object-fit: contain;
-            box-shadow: none; /* Remove shadow */
-        }
-
-        /* Project slides layout: image 2/5, text 3/5 */
-        .slide.project-slide .grid {
-            grid-template-columns: 1fr 1fr;
-            padding: 0 50px;
-            gap: 30px;
-        }
-
-        /* Conference slide keeps original layout */
-        .slide.conference-slide .grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        /* Desktop responsive adjustments */
-        @media (min-width: 1024px) {
-            .slide .space-y-8 {
-                padding: 30px;
-            }
-            
-            .slide h2 {
-                font-size: 3rem;
-            }
-
-            .slide h3 {
-                font-size: 2.25rem;
-            }
-
-            .slide h4 {
-                font-size: 1.75rem;
-            }
-
-            .slide p {
-                font-size: 1.25rem;
-            }
-        }
-
-        .slide .space-y-8 {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        /* Responsive text sizing */
-        .slide h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .slide h3 {
-            font-size: 2rem;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
-        .slide h4 {
-            font-size: 1.5rem;
-            line-height: 1.4;
-            margin-bottom: 1.5rem;
-        }
-
-        .slide p {
-            font-size: 1.125rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .slideshow-nav {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0;
-            pointer-events: none;
-            z-index: 20;
-        }
-
-        .slideshow-nav-btn {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            pointer-events: auto;
-            position: relative;
-        }
-
-        .slideshow-nav-btn.prev {
-            left: -15px;
-        }
-
-        .slideshow-nav-btn.next {
-            right: -15px;
-        }
-
-        .slideshow-nav-btn:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: scale(1.1);
-        }
-
-        .slideshow-indicators {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .slideshow-indicators .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid #0a2540;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slideshow-indicators .indicator.active {
-            background: #0a2540;
-            transform: scale(1.3);
-        }
-
-        .slideshow-indicators .indicator:hover {
-            background: #0a2540;
-            transform: scale(1.1);
-        }
-
-        @media (max-width: 767px) {
-            .integrated-slideshow {
-                padding: 0 15px;
-            }
-            
-            .slideshow-container {
-                height: 700px; /* Increased height for mobile 2-row layout */
-            }
-            
-            /* Mobile layout: 2 rows (image on top, text below) */
-            .slide .grid {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: 1fr 1fr;
-                gap: 20px;
-                padding: 0 20px !important;
-            }
-            
-            .slide img {
-                width: 100%;
-                height: auto;
-                /* max-height: 300px; */
-                object-fit: contain;
-            }
-            
-            .slide .space-y-8 {
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 15px 10px;
-            }
-            
-            /* Mobile text sizing */
-            .slide h2 {
-                font-size: 2rem;
-                line-height: 1.2;
-                margin-bottom: 0.75rem;
-            }
-
-            .slide h3 {
-                font-size: 1.5rem;
-                line-height: 1.3;
-                margin-bottom: 0.75rem;
-            }
-
-            .slide h4 {
-                font-size: 1.25rem;
-                line-height: 1.4;
-                margin-bottom: 1rem;
-            }
-
-            .slide p {
-                font-size: 1rem;
-                line-height: 1.5;
-                margin-bottom: 0.75rem;
-            }
-            
-            .slideshow-nav-btn {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .slideshow-nav-btn.prev {
-                left: -15px;
-            }
-
-            .slideshow-nav-btn.next {
-                right: -15px;
-            }
-            
-            .slideshow-nav {
-                padding: 0;
-            }
-            .slideshow-indicators {
-                gap: 6px;
-            }
-            .slideshow-indicators .indicator {
-                width: 10px;
-                height: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .integrated-slideshow {
-                padding: 0 10px;
-            }
-            
-            .slideshow-container {
-                height: 600px; /* Adjusted for very small screens with 2-row layout */
-            }
-            
-            /* Very small screens: 2 rows layout */
-            .slide .grid {
-                grid-template-columns: 1fr !important;
-                grid-template-rows: 1fr 1fr;
-                gap: 15px;
-                padding: 0 15px !important;
-            }
-            
-            .slide img {
-                width: 100%;
-                height: auto;
-                /* max-height: 250px; */
-                object-fit: contain;
-            }
-            
-            .slide .space-y-8 {
-                height: auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                padding: 10px 5px;
-            }
-            
-            /* Very small screen text sizing */
-            .slide h2 {
-                font-size: 1.75rem;
-                line-height: 1.2;
-                margin-bottom: 0.5rem;
-            }
-
-            .slide h3 {
-                font-size: 1.25rem;
-                line-height: 1.3;
-                margin-bottom: 0.5rem;
-            }
-
-            .slide h4 {
-                font-size: 1.125rem;
-                line-height: 1.4;
-                margin-bottom: 0.75rem;
-            }
-
-            .slide p {
-                font-size: 0.875rem;
-                line-height: 1.4;
-                margin-bottom: 0.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/fab.css">
+    <link rel="stylesheet" href="./assets/css/en.css">
 </head>
 <body class="text-brand-navy">
     
@@ -473,13 +32,13 @@
 
     <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div><a href="#" class="text-2xl font-black text-brand-navy tracking-wider"><img src="./assets/imgs/LogoMediacal.png" class="h-[60px]" alt="Medicallaw Logo" loading="lazy"></a></div>
+            <div><a href="#" class="text-2xl font-black text-brand-navy tracking-wider"><img src="./assets/imgs/LogoMediacal.png" class="h-[72px]" alt="Medicallaw Logo" loading="lazy"></a></div>
             <div class="hidden md:flex space-x-8 items-center font-semibold">
                 <a href="#about" class="text-gray-700 hover:text-brand-gold transition">About</a>
                 <a href="#speakers" class="text-gray-700 hover:text-brand-gold transition">Speakers</a>
                 <a href="#agenda" class="text-gray-700 hover:text-brand-gold transition">Agenda</a>
                 <a href="#tickets" class="text-gray-700 hover:text-brand-gold transition">Tickets</a>
-                <a href="payment.html" class="text-gray-700 hover:text-brand-gold transition">Payment</a>
+                <a href="payment-en.html" class="text-gray-700 hover:text-brand-gold transition">Payment</a>
                 <a href="#register" class="relative z-10 shimmer-btn bg-brand-gold text-white font-bold py-2 px-6 rounded-full hover:bg-brand-gold-dark transition shadow-lg">Register</a>
                 <a href="index.html" title="Tiếng Việt" class="flex items-center text-gray-700 hover:text-brand-gold transition">
                     <img
@@ -491,27 +50,27 @@
             </div>
             <div class="md:hidden"><button id="mobile-menu-button" class="text-brand-navy focus:outline-none"><i class="fas fa-bars text-2xl"></i></button></div>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white">
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3">
             <a href="#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About</a>
             <a href="#speakers" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Speakers</a>
             <a href="#agenda" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Agenda</a>
             <a href="#tickets" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Tickets</a>
-            <a href="payment.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Payment</a>
-            <a href="#register" class="block mx-4 my-3 bg-brand-gold text-white text-center font-bold py-3 rounded-full">Register</a>
-            <a href="index.html" title="Tiếng Việt" class="flex items-center justify-center px-6 py-3 text-gray-700 hover:bg-gray-100">
+            <a href="payment-en.html" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Payment</a>
+            <a href="index.html" title="Tiếng Việt" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">
                 <img
                     src="https://flagcdn.com/w40/vn.png"
                     srcset="https://flagcdn.com/w80/vn.png 2x"
                     width="40"
                     alt="Vietnam">
             </a>
+            <a href="#register" class="block mx-4 my-3 bg-brand-gold text-white text-center font-bold py-3 rounded-full">Register</a>
         </div>
     </header>
 
     <main>
         <section class="hero-container text-white">
             <div class="hero-content container mx-auto px-4 py-12 md:py-36 text-center flex flex-col items-center">
-                <h1 class="text-2xl md:text-5xl font-black  mb-6 tracking-normal uppercase !leading-[1.3] md:w-3/4">INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 - HIMA2025</h1>
+                <h1 class="text-2xl md:text-5xl font-black  mb-6 tracking-normal uppercase !leading-[1.3] md:w-3/4">INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 HIMA2025</h1>
                 <p class="text-2xl md:text-3xl font-semibold mb-4 text-brand-gold timetable">(Held for the first time)</p>
                 <p class="text-xl md:text-2xl text-white max-w-3xl mx-auto mb-10">Legal Clarity – Medical Value</p>
                 <div id="countdown" class="grid grid-cols-4 gap-4 md:gap-6 max-w-xl mx-auto mb-12 text-center">
@@ -543,7 +102,7 @@
                                         <h2 class="text-3xl md:text-5xl font-extrabold text-brand-navy mb-4 tracking-normal">About the Conference</h2>
                                         <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                                             <p> 
-                                                INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 - HIMA2025 (Held for the first time) organized by Medicallaw, will bring together more than 200 leaders from ministries, healthcare corporations, investment funds, biomedical technology and genetic testing, as well as enterprises in cosmetics, nutrition, dairy, and international experts.
+                                                INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 HIMA2025 (Held for the first time) organized by Medicallaw, will bring together more than 200 leaders from ministries, healthcare corporations, investment funds, biomedical technology and genetic testing, as well as enterprises in cosmetics, nutrition, dairy, and international experts.
 <br>
 The event aims to promote legal transparency and standardize M&A processes in the healthcare sector, with a vision toward IPO readiness and sustainable growth.
                                             </p>
@@ -703,7 +262,7 @@ The event aims to promote legal transparency and standardize M&A processes in th
                     <div class="bg-white text-center p-8 rounded-3xl shadow-lg hover:-translate-y-2 transition-transform duration-300">
                         <div class="text-5xl text-brand-teal mb-5"><i class="fas fa-users"></i></div>
                         <h3 class="text-2xl font-bold text-brand-navy mb-2">Media Partner</h3>
-                        <p class="text-lg text-gray-600">“Suc Khoe va Doi Song” Newspaper - Ministry of Health</p>
+                        <p class="text-lg text-gray-600">"Suc Khoe va Doi Song" Newspaper - Ministry of Health</p>
                     </div>
                 </div>
             </section>
@@ -747,7 +306,7 @@ The event aims to promote legal transparency and standardize M&A processes in th
                             <div class="text-brand-gold text-xl font-bold w-20 text-center">09:35 <br>–<br> 
                                 10:15</div>
                             <div>
-                                <h4 class="font-bold text-xl text-brand-navy">Session 3: Overview of Vietnam’s Capital Market: Equities, Bonds, and IPO Opportunities.</h4>
+                                <h4 class="font-bold text-xl text-brand-navy">Session 3: Overview of Vietnam's Capital Market: Equities, Bonds, and IPO Opportunities.</h4>
                                 <p class="text-gray-600"><strong>Speakers:</strong> Representatives from asset management funds and securities firms.</p>
                             </div>
                         </div>
@@ -755,7 +314,7 @@ The event aims to promote legal transparency and standardize M&A processes in th
                             <div class="text-brand-navy text-xl font-bold w-20 text-center">10:15 <br>–<br> 
                                 10:50</div>
                             <div>
-                                <h4 class="font-bold text-xl text-brand-navy">Session 4: Investors’ Expectations and Requirements – Perspectives from International Investment Funds</h4>
+                                <h4 class="font-bold text-xl text-brand-navy">Session 4: Investors' Expectations and Requirements – Perspectives from International Investment Funds</h4>
                                 <p class="text-gray-600"><strong>Speaker:</strong> Representative from an International Investment Fund</p>
                             </div>
                         </div>
@@ -766,7 +325,7 @@ The event aims to promote legal transparency and standardize M&A processes in th
                         <div class="bg-brand-cream/60 p-4 rounded-2xl shadow-sm border-l-4 border-transparent hover:border-brand-navy hover:shadow-xl transition duration-300 flex items-center space-x-6">
                             <div class="text-brand-gold text-xl font-bold w-20 text-center">11:00 <br> – <br> 
                                 11:30</div>
-                            <div><h4 class="font-bold text-xl text-brand-navy">Panel Discussion & Q&A: M&A in Vietnam’s Healthcare Sector</h4>
+                            <div><h4 class="font-bold text-xl text-brand-navy">Panel Discussion & Q&A: M&A in Vietnam's Healthcare Sector</h4>
                             <p class="text-gray-600">Representatives from ONEtoONE, Medicallaw, Securities Firms, International Investment Funds</p>
                             </div>
                         </div>
@@ -995,7 +554,7 @@ The event aims to promote legal transparency and standardize M&A processes in th
                 </form>
             </section>
             <div class="container mx-auto px-6 text-center md:pt-20 pt-6">
-                <h5 class="text-3xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 - HIMA2025</h5>
+                <h5 class="text-3xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">INTERNATIONAL CONFERENCE ON MERGERS AND ACQUISITIONS (M&A) IN THE HEALTHCARE SECTOR 2025 HIMA2025</h5>
                 <h5 class="text-xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">(Held for the first time)</h5>
                 
                 <div class="mb-12">
@@ -1046,259 +605,27 @@ The event aims to promote legal transparency and standardize M&A processes in th
         </div>
     </main>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            // --- Progress Bar ---
-            window.addEventListener('scroll', () => {
-                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrolled = (window.scrollY / scrollableHeight) * 100;
-                document.getElementById('progress-bar').style.width = scrolled + '%';
-            });
-
-            // --- Particles.js Initialization ---
-            particlesJS('particles-js', {
-                "particles": { "number": { "value": 50, "density": { "enable": true, "value_area": 800 } }, "color": { "value": ["#0a2540", "#14b8a6"] }, "shape": { "type": "circle" }, "opacity": { "value": 0.6, "random": true }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#0d3b66", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false } },
-                "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } } } },
-                "retina_detect": true
-            });
-
-            // --- Mobile Menu Toggle ---
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-            mobileMenu.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
-
-            // --- Countdown Timer ---
-            const countdownDate = new Date("Nov 21, 2025 07:30:00").getTime();
-            const timer = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = countdownDate - now;
-                document.getElementById('days').innerText = Math.floor(distance / 864e5).toString().padStart(2, '0');
-                document.getElementById('hours').innerText = Math.floor((distance % 864e5) / 36e5).toString().padStart(2, '0');
-                document.getElementById('minutes').innerText = Math.floor((distance % 36e5) / 6e4).toString().padStart(2, '0');
-                document.getElementById('seconds').innerText = Math.floor((distance % 6e4) / 1000).toString().padStart(2, '0');
-                if (distance < 0) {
-                    clearInterval(timer);
-                    document.getElementById('countdown').innerHTML = "<div class='col-span-4 text-2xl font-bold text-brand-navy'>The event has already taken place!</div>";
-                }
-            }, 1000);
-
-            // --- Form Submission Handler ---
-            const form = document.getElementById('registration-form');
-            const formMessage = document.getElementById('form-message');
-            const submitBtn = document.getElementById('submit-btn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loader = submitBtn.querySelector('.loader');
-            form.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                submitBtn.disabled = true;
-                btnText.classList.add('opacity-50');
-                loader.classList.remove('hidden');
-                
-                const inputs = form.querySelectorAll('input, select');
-                const [nameInput, positionInput, emailInput, phoneInput, addressInput, questionInput, typeSelect, needSelect] = inputs;
-                const data = {
-                    name: nameInput.value.trim(),
-                    position: positionInput.value.trim(),
-                    email: emailInput.value.trim(),
-                    phone: phoneInput.value.trim(),
-                    address: addressInput.value.trim(),
-                    question: questionInput.value.trim(),
-                    type: typeSelect.options[typeSelect.selectedIndex].text,
-                    need: needSelect.options[needSelect.selectedIndex].text
-                };
+    <script src="./assets/js/en.js" defer></script>
     
-                try {
-                    const res = await fetch('https://api.xuan.media/send_mail', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(data)
-                    });
-                    if (res.ok) {
-                        formMessage.textContent = 'Thank you for registering! Redirecting to payment page...';
-                        formMessage.className = 'block text-center p-3 rounded-md bg-green-100 text-green-800';
-                        form.reset();
-                        // Redirect to payment page after 2 seconds
-                        setTimeout(() => {
-                            window.location.href = 'payment.html';
-                        }, 1000);
-                    } else {
-                        formMessage.textContent = 'Registration failed. Please try again or contact the organizers.';
-                        formMessage.className = 'block text-center p-3 rounded-md bg-red-100 text-red-800';
-                    }
-                } catch (err) {
-                    formMessage.textContent = 'Could not connect to the server. Please try again later.';
-                    formMessage.className = 'block text-center p-3 rounded-md bg-red-100 text-red-800';
-                } finally {
-                submitBtn.disabled = false;
-                btnText.classList.remove('opacity-50');
-                loader.classList.add('hidden');
-                }
-            });
-            
-            // Integrated Slideshow Class
-            class IntegratedSlideshow {
-                constructor() {
-                    this.slides = document.querySelectorAll('.slide');
-                    this.indicators = document.querySelectorAll('.slideshow-indicators .indicator');
-                    this.prevBtn = document.getElementById('slideshowPrevBtn');
-                    this.nextBtn = document.getElementById('slideshowNextBtn');
-                    this.currentSlide = 0;
-                    this.totalSlides = this.slides.length;
-                    this.autoSlideInterval = null;
-                    this.init();
-                }
-
-                init() {
-                    this.bindEvents();
-                    this.startAutoSlide();
-                    this.updateSlide();
-                }
-
-                bindEvents() {
-                    this.prevBtn.addEventListener('click', () => this.prevSlide());
-                    this.nextBtn.addEventListener('click', () => this.nextSlide());
-                    
-                    this.indicators.forEach((indicator, index) => {
-                        indicator.addEventListener('click', () => this.goToSlide(index));
-                    });
-
-                    // Pause auto-slide on hover
-                    const slideshow = document.querySelector('.integrated-slideshow');
-                    slideshow.addEventListener('mouseenter', () => this.stopAutoSlide());
-                    slideshow.addEventListener('mouseleave', () => this.startAutoSlide());
-                }
-
-                updateSlide() {
-                    // Hide all slides
-                    this.slides.forEach(slide => {
-                        slide.classList.remove('active');
-                    });
-
-                    // Show current slide
-                    this.slides[this.currentSlide].classList.add('active');
-
-                    // Update indicators
-                    this.indicators.forEach((indicator, index) => {
-                        indicator.classList.toggle('active', index === this.currentSlide);
-                    });
-                }
-
-                nextSlide() {
-                    this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-                    this.updateSlide();
-                }
-
-                prevSlide() {
-                    this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
-                    this.updateSlide();
-                }
-
-                goToSlide(index) {
-                    this.currentSlide = index;
-                    this.updateSlide();
-                }
-
-                startAutoSlide() {
-                    this.stopAutoSlide();
-                    this.autoSlideInterval = setInterval(() => {
-                        this.nextSlide();
-                    }, 4000); // Change slide every 4 seconds
-                }
-
-                stopAutoSlide() {
-                    if (this.autoSlideInterval) {
-                        clearInterval(this.autoSlideInterval);
-                        this.autoSlideInterval = null;
-                    }
-                }
-            }
-
-            // Initialize the integrated slideshow
-            new IntegratedSlideshow();
-
-            // Handle window resize
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(() => {
-                    location.reload(); 
-                }, 250);
-            });
-
-            // --- GSAP Animations ---
-            gsap.registerPlugin(ScrollTrigger);
-
-            // Animate headings on scroll
-            document.querySelectorAll('section h2').forEach(h => {
-                gsap.from(h, {
-                    opacity: 0,
-                    y: 20,
-                    duration: 0.8,
-                    ease: 'power2.out',
-                    scrollTrigger: { trigger: h, start: 'top 85%', once: true }
-                });
-            });
-
-            // Hero Section Animation
-            gsap.set('.hero-content > *', { autoAlpha: 1 });
-            const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
-            heroTimeline
-                .fromTo('.hero-content > h1', { y: -20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8 })
-                .fromTo('.hero-content p.timetable', { y: 10, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1 }, "-=0.4")
-                .fromTo('.hero-content > p:nth-of-type(2)', { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8 }, "-=0.6")
-                .fromTo('#countdown > div', { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1 }, "-=0.5")
-                .fromTo('.hero-content > a', { scale: 0.95, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6 }, "-=0.4");
-
-            // General Section Fade-in
-            gsap.utils.toArray('section').forEach((section, i) => {
-                if (i > 0) {
-                    gsap.set(section, { autoAlpha: 0, y: 50 });
-                }
-                ScrollTrigger.create({
-                    trigger: section,
-                    start: 'top 85%',
-                    end: 'bottom top',
-                    onEnter: () => gsap.to(section, { autoAlpha: 1, y: 0, duration: 1, ease: 'power3.out' }),
-                    once: true
-                });
-            });
-
-            // Staggered Grid/Card Animations
-            const animatedGrids = [
-                '#key-info > div',
-                '#agenda .space-y-4 > div',
-                '#speakers .grid > div',
-                '.integrated-slideshow',
-                '#benefits .grid > div',
-                '#tickets .grid > div',
-                '#sponsors .grid > div'
-            ];
-            animatedGrids.forEach(selector => {
-                gsap.set(selector, { autoAlpha: 0, y: 40 });
-                ScrollTrigger.create({
-                    trigger: selector,
-                    start: 'top 90%',
-                    onEnter: () => gsap.to(selector, {
-                        autoAlpha: 1,
-                        y: 0,
-                        duration: 0.8,
-                        stagger: 0.15,
-                        ease: 'power3.out'
-                    }),
-                    once: true
-                });
-            });
-
-            // Hover effects for cards
-            // const hoverCards = document.querySelectorAll('#key-info > div, #benefits .grid > div, #speakers .group, #agenda .space-y-4 > div, .integrated-slideshow .slide');
-            // hoverCards.forEach(card => {
-            //     gsap.set(card, { transformOrigin: 'center center' });
-            //     card.addEventListener('mouseenter', () => gsap.to(card, { scale: 1.03, y: -5, duration: 0.3, ease: 'power2.out' }));
-            //     card.addEventListener('mouseleave', () => gsap.to(card, { scale: 1, y: 0, duration: 0.3, ease: 'power2.out' }));
-            // });
-        });
-    </script>
+    <div class="floating-container">
+        <div class="floating-options">
+            <a class="btn-hotline" href="tel:+840559322322" title="Gọi Hotline">
+                <img src="./assets/icons/phone.svg" alt="Hotline" width="30" height="30">
+                <span>Hotline</span>
+            </a>
+            <a class="btn-zalo" href="https://zalo.me/0559322322" target="_blank" rel="noopener" title="Mở Zalo">
+                <img src="./assets/icons/zalo.svg" alt="Zalo" width="30" height="30">
+                <span>Zalo</span>
+            </a>
+            <a class="btn-facebook" href="https://www.facebook.com/profile.php?id=100086742171871" target="_blank" rel="noopener" title="Mở Facebook">
+                <img src="./assets/icons/facebook.svg" alt="Facebook" width="30" height="30">
+                <span>Facebook</span>
+            </a>
+        </div>
+        <div class="floating-button" onclick="toggleOptions()">
+            <img id="toggle-icon" src="./assets/icons/support.svg" alt="Support" width="36" height="36">
+        </div>
+    </div>
+    <script src="./assets/js/fab.js" defer></script>
 </body>
 </html>

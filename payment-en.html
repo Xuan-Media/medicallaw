@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - INTERNATIONAL CONFERENCE ON M&A IN HEALTHCARE 2025</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="./assets/css/payment.css">
+    <link rel="stylesheet" href="./assets/css/fab.css">
+</head>
+
+<body class="text-brand-navy">
+    <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="en.html" class="text-2xl font-black text-brand-navy tracking-wider">
+                <img src="./assets/imgs/LogoMediacal.png" class="h-[72px]" alt="Medicallaw Logo">
+            </a>
+            <div class="hidden md:flex space-x-8 items-center font-semibold">
+                <a href="en.html#about" class="text-gray-700 hover:text-brand-gold transition">About</a>
+                <a href="en.html#speakers" class="text-gray-700 hover:text-brand-gold transition">Speakers</a>
+                <a href="en.html#agenda" class="text-gray-700 hover:text-brand-gold transition">Agenda</a>
+                <a href="en.html#tickets" class="text-gray-700 hover:text-brand-gold transition">Tickets</a>
+                <a href="#" class="text-brand-gold transition">Payment</a>
+                <a href="en.html#register" class="relative z-10 bg-brand-gold text-white font-bold py-2 px-6 rounded-full hover:bg-brand-gold-dark transition shadow-lg">Register</a>
+                <a href="payment.html" title="Tiếng Việt" class="flex items-center text-gray-700 hover:text-brand-gold transition">
+                    <img
+                        src="https://flagcdn.com/w40/vn.png"
+                        srcset="https://flagcdn.com/w80/vn.png 2x"
+                        width="40"
+                        alt="Vietnam">
+                </a>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-brand-navy focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white pb-3">
+            <a href="en.html#about" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About</a>
+            <a href="en.html#speakers" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Speakers</a>
+            <a href="en.html#agenda" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Agenda</a>
+            <a href="en.html#tickets" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Tickets</a>
+            <a href="#" class="block px-6 py-3 text-brand-gold hover:bg-gray-100">Payment</a>
+            <a href="payment.html" title="Tiếng Việt" class="block px-6 py-3 text-brand-gold hover:bg-gray-100">
+                <img
+                    src="https://flagcdn.com/w40/vn.png"
+                    srcset="https://flagcdn.com/w80/vn.png 2x"
+                    width="40"
+                    alt="Vietnam">
+            </a>
+            <a href="en.html#register" class="block mx-4 my-3 bg-brand-gold text-white text-center font-bold py-3 rounded-full">Register</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 md:py-24">
+        <div class="max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-8">
+            <div class="w-full md:w-1/2 flex flex-col p-4 border border-gray-200 rounded-xl">
+                <div class="mb-4 text-gray-600">
+                    <p class="font-semibold">Step 1: Open your E-Wallet/Banking App</p>
+                    <p>Step 2: Choose <i class="fa-solid fa-qrcode"></i> and scan the QR code</p>
+                </div>
+                <div class="relative p-2 border-2 border-dashed border-gray-300 rounded-lg">
+                    <img id="qr-image" src="./assets/imgs/qrcodetp.png" alt="Payment QR Code" class="w-64 h-64 m-auto object-cover">
+                </div>
+                <a id="download-qr-btn" href="./assets/imgs/qrcodetp.png" download="Payment-QR.png" class="mt-6 inline-flex items-center justify-center w-fit m-auto bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md">
+                    <i class="fa-solid fa-download mr-2"></i>
+                    <span>Download</span>
+                </a>
+                <div class="mt-4 text-gray-600">
+                    <p>Step 3: Confirm the Transfer</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col">
+                <h2 class="text-2xl font-bold text-brand-navy mb-1">BANK TRANSFER DETAILS</h2>
+                <p class="text-gray-500 mb-6">Supports 24/7 instant transfer via banking apps</p>
+                <div class="text-center bg-gray-100 py-3 rounded-lg mb-6">
+                    <p class="text-2xl font-extrabold text-brand-navy-light tracking-wider">Vietnam Medical Legal Consulting Co., Ltd</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="info-row flex items-center">
+                        <span class="info-label w-1/2">BANK:</span>
+                        <div class="info-value-wrapper">
+                            <span id="bank-name" class="info-value font-semibold"><img src="https://tpb.vn/wps/wcm/connect/a85b875d-ad73-4591-8fd5-e8417a69c316/logo-tpb.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-a85b875d-ad73-4591-8fd5-e8417a69c316-pjudclH" class="h-6" alt="TPBank"></span>
+                        </div>
+                    </div>
+                    <div class="info-row flex items-center">
+                        <span class="info-label w-1/2">ACCOUNT NUMBER:</span>
+                        <div class="info-value-wrapper">
+                            <span id="account-number" class="info-value font-bold text-brand-teal">87968879879</span>
+                            <button onclick="copyToClipboard('account-number')" class="copy-btn" title="Copy account number">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="info-row flex items-center">
+                        <span class="info-label w-1/2">AMOUNT:</span>
+                        <div class="info-value-wrapper">
+                            <span id="amount" class="info-value font-bold text-red-600">2,000,000 VND</span>
+                            <button onclick="copyToClipboard('amount', '2000000')" class="copy-btn" title="Copy amount">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-auto pt-6 text-red-600 font-semibold text-center border-t border-dashed mt-6">
+                    <p>Please <span class="font-extrabold">enter the exact transfer content</span>. After payment, kindly contact our support team.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#101332] text-white pt-12 pb-8">
+        <div class="container mx-auto px-6 text-center">
+            <h5 class="text-3xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto">INTERNATIONAL CONFERENCE ON M&A IN HEALTHCARE 2025</h5>
+            <h5 class="text-xl font-bold mb-4 tracking-tight text-brand-gold !leading-[1.2] md:w-3/4 text-center mx-auto"><i>First Edition</i></h5>
+            <div class="mb-12">
+                <h4 class="text-2xl font-bold mb-6 text-white">Contact Information</h4>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                        <h5 class="text-xl font-bold mb-4 text-brand-gold">Organizer</h5>
+                        <p class="text-white mb-2"><strong>Vietnam Medical Legal Consulting Co., Ltd (MEDICALLAW)</strong></p>
+                        <p class="text-gray-300 mb-1"><i class="fas fa-phone mr-2"></i><strong>Hotline:</strong> +84 559.322.322 / +84 914.266.688 (Mrs. Huong) / +84 911.883.899 (Mr. Cuong)</p>
+                        <p class="text-gray-300 mb-1"><i class="fas fa-envelope mr-2"></i><strong>Email:</strong> info@medicallaw.vn</p>
+                        <p class="text-gray-300 mb-1"><i class="fas fa-globe mr-2"></i><strong>Website:</strong> https://medicallaw.vn/</p>
+                        <p class="text-gray-300"><i class="fas fa-map-marker-alt mr-2"></i><strong>Address:</strong> 95 Nguyen Tuan Street, Thanh Xuan Ward, Hanoi, Vietnam</p>
+                    </div>
+                    <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
+                        <h5 class="text-xl font-bold mb-4 text-brand-gold">Venue</h5>
+                        <p class="text-white mb-2"><strong>MELIÁ HANOI HOTEL</strong></p>
+                        <p class="text-gray-300 mb-1"><i class="fas fa-phone mr-2"></i><strong>Hotline:</strong> 024 3934 3343</p>
+                        <p class="text-gray-300 mb-1"><i class="fas fa-envelope mr-2"></i><strong>Email:</strong> rsvn@meliahanoi.com.vn</p>
+                        <p class="text-gray-300"><i class="fas fa-map-marker-alt mr-2"></i><strong>Address:</strong> 44 Ly Thuong Kiet Street, Cua Nam Ward, Hoan Kiem District, Hanoi, Vietnam</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                <div class="mb-3"><span class="text-gray-400">Organizer</span> <br><span class="text-xl font-bold">Medicallaw</span></div>
+                <div class="mb-3"><span class="text-gray-400">Co-organizer</span> <br><span class="text-xl font-bold">Pharmalink</span></div>
+                <div class="mb-3"><span class="text-gray-400">International Partner</span> <br><span class="text-xl font-bold">ONEtoONE Corporate Finance</span></div>
+                <div class="mb-3"><span class="text-gray-400">Media Partner</span> <br><span class="text-xl font-bold">Suc Khoe & Doi Song Newspaper</span></div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-gray-500 text-sm">
+                <p>© 2025 Medicallaw. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/payment.js" defer></script>\
+    
+    <div class="floating-container">
+        <div class="floating-options">
+            <a class="btn-hotline" href="tel:+840559322322" title="Gọi Hotline">
+                <img src="./assets/icons/phone.svg" alt="Hotline" width="30" height="30">
+                <span>Hotline</span>
+            </a>
+            <a class="btn-zalo" href="https://zalo.me/0559322322" target="_blank" rel="noopener" title="Mở Zalo">
+                <img src="./assets/icons/zalo.svg" alt="Zalo" width="30" height="30">
+                <span>Zalo</span>
+            </a>
+            <a class="btn-facebook" href="https://www.facebook.com/profile.php?id=100086742171871" target="_blank" rel="noopener" title="Mở Facebook">
+                <img src="./assets/icons/facebook.svg" alt="Facebook" width="30" height="30">
+                <span>Facebook</span>
+            </a>
+        </div>
+        <div class="floating-button" onclick="toggleOptions()">
+            <img id="toggle-icon" src="./assets/icons/support.svg" alt="Support" width="36" height="36">
+        </div>
+    </div>
+    <script src="./assets/js/fab.js" defer></script>
+</body>
+</html>
+
