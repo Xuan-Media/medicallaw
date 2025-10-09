@@ -14,6 +14,10 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" as="script">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://flagcdn.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -37,7 +41,7 @@
     <header id="header" class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50 transition-all duration-300">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-2xl font-black text-brand-navy tracking-wider">
-                <img src="./assets/imgs/LogoMediacal.png" class="h-[60px]" alt="Medicallaw Logo" loading="lazy">
+                <img src="./assets/imgs/LogoMediacal.png" class="h-[60px]" alt="Medicallaw Logo" loading="lazy" decoding="async" fetchpriority="low">
             </a>
             <div class="hidden md:flex space-x-8 items-center font-semibold">
                 <a href="#gioi-thieu" class="text-gray-700 hover:text-brand-gold transition">Giới Thiệu</a>
@@ -340,7 +344,7 @@
                                     </div>
                                     <div class="space-y-8">
                                         <h3 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-4 tracking-normal">Dự Án Tiêu Biểu</h3>
-                                        <h4 class="text-2xl md:text-3xl font-bold text-brand-gold mb-6">ĐAỊ HỌC Y DƯỢC - HOÀNG ANH GIA LAI</h4>
+                                        <h4 class="text-2xl md:text-3xl font-bold text-brand-gold mb-6">BỆNH VIỆN ĐẠI HỌC Y DƯỢC - HOÀNG ANH GIA LAI</h4>
                                         <!-- <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
                                             <p>
                                                 Bệnh viện HAGL là một dự án quan trọng mà Medicallaw đã tư vấn và hỗ trợ trong quá trình phát triển và mở rộng.

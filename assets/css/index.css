@@ -42,7 +42,7 @@ body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -m
 .slide.active { display: block; opacity: 1; }
 .slide .grid { height: 100%; align-items: center; }
 .slide img { width: 100%; height: auto; object-fit: contain; box-shadow: none; }
-.slide.project-slide .grid { grid-template-columns: 1fr 1fr; padding: 0 50px; gap: 30px; }
+.slide.project-slide .grid { grid-template-columns: 1fr 1fr; padding: 0 50px; gap: 30px; text-transform: uppercase; }
 .slide.conference-slide .grid { grid-template-columns: 1fr 1fr; gap: 30px; }
 @media (min-width: 1024px) { .slide .space-y-8 { padding: 30px; } .slide h2 { font-size: 3rem; } .slide h3 { font-size: 2.25rem; } .slide h4 { font-size: 1.75rem; } .slide p { font-size: 1.25rem; } }
 .slide .space-y-8 { height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 20px; }
