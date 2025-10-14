@@ -75,69 +75,72 @@
     </header>
 
     <main class="container mx-auto px-4 py-16 md:py-24">
-        <div class="max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-8">
-            <div class="w-full md:w-1/2 flex flex-col p-4 border border-gray-200 rounded-xl">
-                <div class="mb-4 text-gray-600">
-                    <p class="font-semibold">Bước 1: Mở Ví điện tử/Ngân hàng</p>
-                    <p>Bước 2: Chọn <i class="fa-solid fa-qrcode"></i> và quét mã</p>
-                </div>
-                <div class="relative p-2 border-2 border-dashed border-gray-300 rounded-lg">
-                    <img id="qr-image" src="./assets/imgs/qrcodetp.png" alt="Mã QR thanh toán" class="w-64 h-64 m-auto object-cover">
-                    <!-- <div class="absolute inset-0 flex items-center justify-center">
-                        <img src="https://api.vietqr.io/img/ACB.png" class="w-12 h-12 bg-white p-1 rounded-md shadow-md" alt="Bank Logo"> -->
-                    <!-- </div> -->
-                </div>
-                <a id="download-qr-btn" href="./assets/imgs/qrcodetp.png" download="Ma-QR-Thanh-Toan.png" class="mt-6 inline-flex items-center justify-center w-fit m-auto bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md">
-                    <i class="fa-solid fa-download mr-2"></i>
-                    <span>Tải xuống</span>
-                </a>
-                <div class="mt-4 text-gray-600">
-                    <p>Bước 3: Xác Nhận Chuyển Khoản</p>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 flex flex-col">
-                <h2 class="text-2xl font-bold text-brand-navy mb-1">THÔNG TIN CHUYỂN KHOẢN</h2>
-                <p class="text-gray-500 mb-6">Hỗ trợ ứng dụng ngân hàng để chuyển khoản nhanh 24/7</p>
-                <div class="text-center bg-gray-100 py-3 rounded-lg mb-6">
-                    <p class="text-2xl font-extrabold text-brand-navy-light tracking-wider">Công ty TNHH tư vấn pháp lý y tế Việt Nam</p>
-                </div>
-                <div class="space-y-4">
-                    <div class="info-row flex items-center">
-                        <span class="info-label w-1/2">NGÂN HÀNG:</span>
-                        <div class="info-value-wrapper">
-                            <span id="bank-name" class="info-value font-semibold"><img src="https://tpb.vn/wps/wcm/connect/a85b875d-ad73-4591-8fd5-e8417a69c316/logo-tpb.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-a85b875d-ad73-4591-8fd5-e8417a69c316-pjudclH" class="h-6" alt=""></span>
-                        </div>
+        <div class="max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-2xl">
+            <div class="mb-5">Quý khách vui lòng thanh toán phí thành viên đăng ký hội nghị theo mã QR của BTC dưới đây</div>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="w-full md:w-1/2 flex flex-col p-4 border border-gray-200 rounded-xl">
+                    <div class="mb-4 text-gray-600">
+                        <p class="font-semibold">Bước 1: Mở Ví điện tử/Ngân hàng</p>
+                        <p>Bước 2: Chọn <i class="fa-solid fa-qrcode"></i> và quét mã</p>
                     </div>
-                    <div class="info-row flex items-center">
-                        <span class="info-label w-1/2">TÀI KHOẢN:</span>
-                        <div class="info-value-wrapper">
-                            <span id="account-number" class="info-value font-bold text-brand-teal">87968879879</span>
-                            <button onclick="copyToClipboard('account-number')" class="copy-btn" title="Sao chép số tài khoản">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
+                    <div class="relative p-2 border-2 border-dashed border-gray-300 rounded-lg">
+                        <img id="qr-image" src="./assets/imgs/qrcodetp.png" alt="Mã QR thanh toán" class="w-64 h-64 m-auto object-cover">
+                        <!-- <div class="absolute inset-0 flex items-center justify-center">
+                            <img src="https://api.vietqr.io/img/ACB.png" class="w-12 h-12 bg-white p-1 rounded-md shadow-md" alt="Bank Logo"> -->
+                        <!-- </div> -->
                     </div>
-                    <div class="info-row flex items-center">
-                        <span class="info-label w-1/2">SỐ TIỀN:</span>
-                        <div class="info-value-wrapper">
-                            <span id="amount" class="info-value font-bold text-red-600">2,000,000 VNĐ</span>
-                            <button onclick="copyToClipboard('amount', '2000000')" class="copy-btn" title="Sao chép số tiền">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
+                    <a id="download-qr-btn" href="./assets/imgs/qrcodetp.png" download="Ma-QR-Thanh-Toan.png" class="mt-6 inline-flex items-center justify-center w-fit m-auto bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition-all duration-300 shadow-md">
+                        <i class="fa-solid fa-download mr-2"></i>
+                        <span>Tải xuống</span>
+                    </a>
+                    <div class="mt-4 text-gray-600">
+                        <p>Bước 3: Xác Nhận Chuyển Khoản</p>
                     </div>
-                    <!-- <div class="info-row flex items-center">
-                        <span class="info-label w-1/2">NỘI DUNG*:</span>
-                        <div class="info-value-wrapper">
-                            <span id="payment-content" class="info-value font-mono text-red-600 bg-red-100 px-2 py-1 rounded">MCT90977</span>
-                            <button onclick="copyToClipboard('payment-content')" class="copy-btn" title="Sao chép nội dung">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                    </div> -->
                 </div>
-                <div class="mt-auto pt-6 text-red-600 font-semibold text-center border-t border-dashed mt-6">
-                    <p>Vui lòng <span class="font-extrabold">nhập chính xác nội dung</span>, thanh toán xong vui lòng liên hệ lại bộ phận chăm sóc khách hàng.</p>
+                <div class="w-full md:w-1/2 flex flex-col">
+                    <h2 class="text-2xl font-bold text-brand-navy mb-1">THÔNG TIN CHUYỂN KHOẢN</h2>
+                    <p class="text-gray-500 mb-6">Hỗ trợ ứng dụng ngân hàng để chuyển khoản nhanh 24/7</p>
+                    <div class="text-center bg-gray-100 py-3 rounded-lg mb-6">
+                        <p class="text-2xl font-extrabold text-brand-navy-light tracking-wider">Công ty TNHH tư vấn pháp lý y tế Việt Nam</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="info-row flex items-center">
+                            <span class="info-label w-1/2">NGÂN HÀNG:</span>
+                            <div class="info-value-wrapper">
+                                <span id="bank-name" class="info-value font-semibold"><img src="https://tpb.vn/wps/wcm/connect/a85b875d-ad73-4591-8fd5-e8417a69c316/logo-tpb.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE-a85b875d-ad73-4591-8fd5-e8417a69c316-pjudclH" class="h-6" alt=""></span>
+                            </div>
+                        </div>
+                        <div class="info-row flex items-center">
+                            <span class="info-label w-1/2">TÀI KHOẢN:</span>
+                            <div class="info-value-wrapper">
+                                <span id="account-number" class="info-value font-bold text-brand-teal">87968879879</span>
+                                <button onclick="copyToClipboard('account-number')" class="copy-btn" title="Sao chép số tài khoản">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="info-row flex items-center">
+                            <span class="info-label w-1/2">SỐ TIỀN:</span>
+                            <div class="info-value-wrapper">
+                                <span id="amount" class="info-value font-bold text-red-600">2,000,000 VNĐ</span>
+                                <button onclick="copyToClipboard('amount', '2000000')" class="copy-btn" title="Sao chép số tiền">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div class="info-row flex items-center">
+                            <span class="info-label w-1/2">NỘI DUNG*:</span>
+                            <div class="info-value-wrapper">
+                                <span id="payment-content" class="info-value font-mono text-red-600 bg-red-100 px-2 py-1 rounded">MCT90977</span>
+                                <button onclick="copyToClipboard('payment-content')" class="copy-btn" title="Sao chép nội dung">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="mt-auto pt-6 text-red-600 font-semibold text-center border-t border-dashed mt-6">
+                        <p>Vui lòng <span class="font-extrabold">nhập chính xác nội dung</span>, thanh toán xong vui lòng liên hệ lại bộ phận chăm sóc khách hàng.</p>
+                    </div>
                 </div>
             </div>
         </div>
